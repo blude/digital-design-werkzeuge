@@ -18,7 +18,7 @@ The framework's value is the traceability between levels, not the documents indi
 Check StrictDoc is available, install if not:
 
 ```bash
-strictdoc --version || pip install strictdoc --break-system-packages
+strictdoc --version || pipx install strictdoc
 ```
 
 Create the project and copy the grammars in. The four `.sgra` grammar files are the shared vocabulary — they define every element type, its fields, and its permitted relations. Documents import them, so the grammar is defined once and the documents stay short:
