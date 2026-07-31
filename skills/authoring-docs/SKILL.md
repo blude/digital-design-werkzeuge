@@ -207,7 +207,7 @@ The `.sgra` files in `assets/` are worth reading directly when writing nodes of 
 Pure standard library, no dependencies beyond the Python that StrictDoc already requires. Run them from the project root — the directory containing `docs/`.
 
 | Script | Purpose |
-|---|---|
+| --- | --- |
 | `scripts/validate.py` | **The one to run.** StrictDoc export, then attribute references, then coverage. Exits non-zero on failure, so it works as a CI gate. `--quick` skips the export. |
 | `scripts/trace_report.py` | Graph shape: nodes per level, relations by role, level crossings, most-referenced requirements. `--chain <UID>` walks one requirement upward to its L0 impact. |
 | `scripts/check_attribute_refs.py` | Entity attribute IDs (`E-01.1`) — references to attributes no entity declares, attributes declared under the wrong entity, duplicates. StrictDoc cannot check these. |

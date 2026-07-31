@@ -5,7 +5,7 @@
 A concise, high-level summary of a planned initiative that gives management enough to make a Go/No-Go decision without technical detail.
 
 | | |
-|---|---|
+| --- | --- |
 | **Audience** | Management, executives, decision-makers |
 | **Purpose** | Enable an informed Go/No-Go decision on proceeding to a vision and initial solution design |
 | **Typical length** | 2–3 pages for a small solution; more only as size and complexity demand |
@@ -38,7 +38,7 @@ A concise, high-level summary of a planned initiative that gives management enou
 Two of the six top-level sections are optional. The template marks both, and the guidance is worth honouring rather than filling them with placeholders.
 
 | Section | Subsections | Element types |
-|---|---|---|
+| --- | --- | --- |
 | 1. Context of the initiative | Current Situation · Motivation for Change · Potential Customers and Users · Key Stakeholders · Related Solutions · Competitive Landscape | `SH-` `RS-` |
 | 2. Vision | Future State Description · Expected Impact · Strategic Alignment *(optional)* | `IMP-` |
 | 3. Solution Space | Solution Approach Options · Potential Functionality · Potential Technologies | `SO-` |
@@ -142,7 +142,7 @@ METADATA:
 Only three L0 element types are relation targets from below:
 
 | L0 element | Referenced from | Role |
-|---|---|---|
+| --- | --- | --- |
 | `IMP-` Expected impact | `BG-` business goals at L1 | `Satisfies` |
 | `BRC-` Constraints | `BC-` business constraints at L1 | `Refines` |
 | `SH-` Stakeholders | `VP-` value propositions at L1, `UT-` user types at L2 | `Refines` |

@@ -5,7 +5,7 @@
 The overall technical architecture of the solution at system level: structure, components and their interactions, before any individual element is designed in detail.
 
 | | |
-|---|---|
+| --- | --- |
 | **Audience** | Digital designers and developers, while remaining accessible to non-technical stakeholders |
 | **Purpose** | Describe **how** the solution works, as system-level architecture |
 | **Provides** | Context for the L3 element designs |
@@ -29,7 +29,7 @@ Created early in the design phase to establish the architecture. References to e
 ## Sections
 
 | Section | Element types |
-|---|---|
+| --- | --- |
 | System Goals | `SG-` |
 | System Architecture → Architecture Overview | `AP-` |
 | System Architecture → Architecture Diagram | — |
@@ -70,7 +70,7 @@ The diagram should show every user type, software element, hardware element and 
 The template recommends a specific notation. Mermaid equivalents:
 
 | Notation | Meaning | Mermaid |
-|---|---|---|
+| --- | --- | --- |
 | Rectangle | Software element | `SE01["SE-01 Name"]` |
 | Cylinder | Database | `SE04[("SE-04 Name")]` |
 | Stick figure | User type | `UT01(["UT-01 Name"])` |
@@ -192,7 +192,7 @@ How well the *entire system* performs — not individual elements, which is L3. 
 **`QUALITY_CATEGORY` uses the template's nine technical categories:**
 
 | Value | Covers |
-|---|---|
+| --- | --- |
 | `Performance` | Response times, throughput, resource usage across the system |
 | `Scalability` | Handling growing workload |
 | `Availability` | Uptime, reliability, fault tolerance |
@@ -218,7 +218,7 @@ Non-negotiable requirements limiting design and implementation choices for the s
 **`CONSTRAINT_CATEGORY` follows the template:**
 
 | Value | Covers |
-|---|---|
+| --- | --- |
 | `Legal-regulatory` | Laws, regulations, compliance requirements |
 | `Technical` | Technology choices, platform limitations, existing infrastructure |
 | `Business` | Budget, timeline, organisational policies |
@@ -238,7 +238,7 @@ Non-negotiable requirements limiting design and implementation choices for the s
 **Upward, to L1:**
 
 | L2 element | Target | Role |
-|---|---|---|
+| --- | --- | --- |
 | `SG-` | `BG-` business goal | `Satisfies` |
 | `UT-` | `VCA-` value creation element | `Represents` |
 | `SE-` | `VCA-` value creation element | `Realises` |
@@ -249,7 +249,7 @@ Non-negotiable requirements limiting design and implementation choices for the s
 **Within L2:**
 
 | From | To | Role |
-|---|---|---|
+| --- | --- | --- |
 | `AP-` | `SG-` | `Satisfies` |
 | `SSc-` | `SG-` | `Achieves` |
 | `SE-` | `SG-` | `Satisfies` |

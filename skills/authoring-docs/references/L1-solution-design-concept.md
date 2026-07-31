@@ -5,7 +5,7 @@
 The structure of the solution from the client's business perspective. It bridges business strategy and technical implementation: translating the vision into structured requirements, providing context for L2 and L3, and serving as the agreement point between business stakeholders and the technical team.
 
 | | |
-|---|---|
+| --- | --- |
 | **Primary audience** | Business stakeholders, clients, project sponsors |
 | **Secondary audience** | Digital designers and developers, for business context |
 | **Purpose** | Describe **what** the solution does from the business perspective |
@@ -111,7 +111,7 @@ Each `VP-` should `Satisfies` a business goal, and where an L0 brief exists, `Re
 `VCA-` nodes are the elements working together to deliver the value proposition. `ELEMENT_TYPE` follows the template exactly:
 
 | Value | Meaning |
-|---|---|
+| --- | --- |
 | `Customer` | Receives value |
 | `Organisation-internal` | Part of the client organisation |
 | `Organisation-external` | Partner, supplier, external entity |
@@ -167,7 +167,7 @@ Guidelines: business language, not technical implementation. What happens and wh
 **`QUALITY_CATEGORY` uses business categories, not technical quality attributes:**
 
 | Value | Covers |
-|---|---|
+| --- | --- |
 | `Business-performance` | Revenue, cost, efficiency, productivity |
 | `Customer-satisfaction` | Satisfaction, NPS, retention, adoption |
 | `Service-quality` | Availability, reliability, accuracy as the business sees them |
@@ -188,7 +188,7 @@ This is a deliberate difference from L2 and L3, which use technical quality attr
 **`CONSTRAINT_CATEGORY` follows the template:**
 
 | Value | Covers |
-|---|---|
+| --- | --- |
 | `Legal-regulatory` | Laws, regulations, compliance requirements |
 | `Business` | Budget limits, timeline requirements, organisational policy |
 | `Organisational` | Existing processes, structures or capabilities that must be accommodated |
@@ -216,7 +216,7 @@ The appendix holds supplementary material that supports but does not belong in t
 **Upward, to L0:**
 
 | L1 element | Target | Role |
-|---|---|---|
+| --- | --- | --- |
 | `BG-` | `IMP-` expected impact | `Satisfies` |
 | `VP-` | `SH-` stakeholder group | `Refines` |
 | `BC-` | `BRC-` brief constraint | `Refines` |
@@ -224,7 +224,7 @@ The appendix holds supplementary material that supports but does not belong in t
 **Within L1:**
 
 | From | To | Role |
-|---|---|---|
+| --- | --- | --- |
 | `VP-` | `BG-` | `Satisfies` |
 | `VCA-` | `VP-` | `Realises` |
 | `BP-` | `BG-` | `Supports` |

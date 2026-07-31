@@ -5,7 +5,7 @@ Relations are what make the four documents one artifact rather than four. Get th
 ## The roles
 
 | Role | Meaning | Reverse | Typical use |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `Satisfies` | delivers a goal at the level above | Satisfied by | `BG-01` → `IMP-01`, `SG-01` → `BG-01`, `G-01` → `SG-01` |
 | `Refines` | same concept, more detail or more measurable | Refined by | `SQR-01` → `BQR-01`, `E-01` → `BE-01`, `SC-01` → `BC-01` |
 | `Realises` | an element or flow implements a business concept | Realised by | `SE-01` → `VCA-01`, `SSc-01` → `BP-01`, `UC-01` → `SSc-01` |
@@ -93,7 +93,7 @@ What is genuinely wrong is a relation pointing *downward* — a goal declaring a
 
 Use an inline link in the statement text instead:
 
-```
+```strictdoc
 STATEMENT: >>>
 Cannot be satisfied together with [LINK: SQR-02] under the current
 constraint SC-03.

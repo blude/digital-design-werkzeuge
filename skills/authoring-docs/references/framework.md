@@ -166,7 +166,7 @@ The grammar enforces the boundary mechanically: each document accepts only its o
 ## ID prefix summary
 
 | Level | Prefixes |
-|---|---|
+| --- | --- |
 | L0 | `SH-` `RS-` `IMP-` `SO-` `BRC-` `SUC-` `RSK-` `REC-` |
 | L1 | `BG-` `VP-` `VCA-` `BE-` `BP-` `PS-` `PA-` `BQR-` `BC-` |
 | L2 | `SG-` `AP-` `UT-` `SE-` `HE-` `PE-` `SSc-` `SSt-` `SA-` `SQR-` `SC-` |

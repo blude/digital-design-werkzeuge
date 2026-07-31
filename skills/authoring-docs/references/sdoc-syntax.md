@@ -82,7 +82,7 @@ Reserved field names with built-in meaning: `MID`, `UID`, `LEVEL`, `PREFIX`, `TI
 
 **A blank line is required between a `[[SECTION]]` header and the next node.** This fails:
 
-```
+```strictdoc
 [[SECTION]]
 TITLE: Architecture overview
 [TEXT]
@@ -93,7 +93,7 @@ with `TextXSyntaxError: Expected ... => ' overview *[TEXT] STA'` — note the er
 
 **Multiline field values** are wrapped in `>>>` and `<<<` on their own lines:
 
-```
+```strictdoc
 STATEMENT: >>>
 Multiple lines
 of content.
@@ -134,7 +134,7 @@ Hyphenated values work (`In-Review`, `Conditional-Go`, `Alternative-success`). A
 
 A node type declared `IS_COMPOSITE: True` can contain child nodes. Composite instances use doubled brackets:
 
-```
+```strictdoc
 [[USE_CASE]]
 UID: UC-01
 ...
@@ -156,7 +156,7 @@ Child order is document order. **Do not number steps in the statement text** —
 
 Declared per element in the grammar:
 
-```
+```strictdoc
   RELATIONS:
   - TYPE: Parent
     ROLE: Satisfies
@@ -167,7 +167,7 @@ Only the declared roles are permitted on that element. `REVERSE_ROLE` controls h
 
 Used on a node:
 
-```
+```strictdoc
 RELATIONS:
 - TYPE: Parent
   VALUE: BG-01
@@ -190,7 +190,7 @@ error: maximum recursion depth exceeded
 
 For lateral references use an inline link inside a multiline field:
 
-```
+```strictdoc
 STATEMENT: >>>
 This conflicts with [LINK: SQR-02] and cannot be satisfied simultaneously.
 <<<
@@ -237,7 +237,7 @@ That is the whole benefit. A project that never renames identifiers and never us
 
 One opaque line per node, immediately under the node tag:
 
-```
+```strictdoc
 [SYSTEM_GOAL]
 MID: e7e53cb04d19471580f7046c259e7286
 UID: SG-01
@@ -283,7 +283,7 @@ Set `ENABLE_MID: False`. Leave the `MID` fields and values in place — they are
 
 A grammar can live in its own `.sgra` file and be imported:
 
-```
+```strictdoc
 [GRAMMAR]
 IMPORT_FROM_FILE: L1_solution_design_concept.sgra
 ```
@@ -301,7 +301,7 @@ Externalising the grammars shortens the documents by roughly 25–30%.
 `VIEW_STYLE` takes five values, settable per document under `OPTIONS` or per element under `PROPERTIES`:
 
 | Value | Effect |
-|---|---|
+| --- | --- |
 | `Narrative` | Metadata shown, fields printed without tables. Default. Best for prose-heavy nodes. |
 | `Inline` | Table-based variant |
 | `Table` | Table-based variant |

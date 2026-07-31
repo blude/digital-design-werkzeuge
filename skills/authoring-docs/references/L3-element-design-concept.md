@@ -5,7 +5,7 @@
 The non-technical design of **one element**, described in enough detail to implement it. An element can be a smartphone app, a web app, a server element, or a whole complicated system.
 
 | | |
-|---|---|
+| --- | --- |
 | **Audience** | Digital designers and developers implementing this element |
 | **Scope** | Exactly one element |
 | **Detail** | Sufficient for implementation |
@@ -55,7 +55,7 @@ A use case is a functionality the element provides to a user: exactly one main s
 Every step is one of four kinds, recorded in `STEP_TYPE`:
 
 | `STEP_TYPE` | What it is | Must name |
-|---|---|---|
+| --- | --- | --- |
 | `User-interaction` | User interacts with a user interface | the `UI-`, and the data entered or shown |
 | `Function-call` | Invokes internal logic | the `TF-`, its input, and what happens to its output |
 | `Outbound-call` | Technical interaction with another element | the `TO-` — but prefer a function call |
@@ -99,7 +99,7 @@ Internal functionality the element performs. `TF-` is composite, with `FS-` step
 ### Step classification
 
 | `STEP_TYPE` | What it is | Must name |
-|---|---|---|
+| --- | --- | --- |
 | `Data-operation` | Manipulates known data | data from input, an entity, or another call |
 | `Entity-access` | Reads or writes stored data | the `E-` and the specific attributes, e.g. `E-02.3` |
 | `Function-call` | Invokes another function | the `TF-`, its input, what happens to its output |
@@ -181,9 +181,9 @@ The entities this element **stores**. Include a diagram for complex data structu
 
 `ATTRIBUTES` is a **table**, following the template exactly:
 
-```
+```md
 | ID | Attribute | Type | Required | Description |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | E-01.1 | userId | uuid | required | Identifier of the owning user |
 | E-01.2 | createdAt | datetime | required | When the record was created |
 ```
@@ -232,7 +232,7 @@ Non-negotiable requirements limiting design and implementation choices for this 
 **Upward, to L2 and L1:**
 
 | L3 element | Target | Role |
-|---|---|---|
+| --- | --- | --- |
 | `G-` | `SG-` system goal | `Satisfies` |
 | `UC-` | `SSc-` system scenario | `Realises` |
 | `TO-` | `PE-` partner element | `Calls` |
@@ -243,7 +243,7 @@ Non-negotiable requirements limiting design and implementation choices for this 
 **Within L3:**
 
 | From | To | Role |
-|---|---|---|
+| --- | --- | --- |
 | `UC-` | `G-` | `Achieves` |
 | `TF-` | `G-` | `Achieves` |
 | `UI-` | `UC-` | `Realises` |
