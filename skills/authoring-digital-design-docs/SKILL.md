@@ -38,7 +38,27 @@ The templates carry the full section skeleton for their level, plus one stub nod
 
 The four templates validate together as a set, so copying all of them gives a working skeleton immediately.
 
-## Procedure
+## Checklist for writing or extending a project
+
+- [ ] 1. Establish which levels are in scope
+- [ ] 2. Work out what the content actually is
+- [ ] 3. Write top-down
+- [ ] 4. Validate after every document
+- [ ] 5. Check the shape, not just the correctness
+- [ ] 6. Report
+
+## Working with existing documents
+
+When adding to a project that already has these documents:
+
+1. Read the existing `.sgra` for the level being extended — the project may have customised it
+2. Read enough of the target document to match its conventions and find the next free ID
+3. Never renumber an existing ID. Leave gaps where nodes were deleted
+4. Add the node, then validate the whole project, not just the changed file — a new relation can break another document
+
+If the project has inline grammars rather than imported ones, offer to extract them to `.sgra` files. It shortens the documents by 25–30% and removes the duplication of choice-value lists across levels. Verify the export is still clean afterwards.
+
+## Authoring digital design documents
 
 ### 1. Establish which levels are in scope
 
@@ -202,14 +222,3 @@ Two design points worth knowing when reading their output:
 **Machine identifiers are off by default, and that is a deliberate default rather than an oversight.** A MID survives a UID rename, so a diff can tell a renamed requirement from a deleted one — but it costs an opaque 32-character line on every node in documents meant to be read by executives. Suggest enabling them when a document set has stabilised and renames start to matter, not while it is being drafted. `scripts/enable_mid.py` handles the migration in both directions; `references/sdoc-syntax.md` covers the constraints.
 
 **Deliberate exemptions are reported, not hidden.** A requirement with no upward relation is an error unless it carries `EXTERNALLY_SOURCED: Yes`, `ELEMENT_SPECIFIC: Yes` or `DERIVED: Yes`, in which case it appears under INFO with the marker shown. That keeps a considered decision visible without failing the build.
-
-## Working with existing documents
-
-When adding to a project that already has these documents:
-
-1. Read the existing `.sgra` for the level being extended — the project may have customised it
-2. Read enough of the target document to match its conventions and find the next free ID
-3. Never renumber an existing ID. Leave gaps where nodes were deleted
-4. Add the node, then validate the whole project, not just the changed file — a new relation can break another document
-
-If the project has inline grammars rather than imported ones, offer to extract them to `.sgra` files. It shortens the documents by 25–30% and removes the duplication of choice-value lists across levels. Verify the export is still clean afterwards.
