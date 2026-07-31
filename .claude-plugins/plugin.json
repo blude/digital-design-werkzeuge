@@ -1,6 +1,18 @@
 {
   "name": "digital-design",
+  "displayName": "Digital Design",
   "description": "Creates a Four-level design documentation framework (Digital Design Brief, Solution Design Concept, System Design Concept, Element Design Concept) as validated StrictDoc documents, plus a drafting agent tuned to the register each level needs.",
   "version": "0.1.0",
-  "author": { "name": "Sarah Puppin Pratti" }
+  "author": {
+    "name": "Sarah Puppin Pratti",
+    "email": "sarah@pratti.de"
+  },
+  "license": "MIT",
+  "keywords": [
+    "digital design",
+    "design documentation",
+    "strictdoc",
+    "requirements",
+    "ireb"
+  ]
 }
