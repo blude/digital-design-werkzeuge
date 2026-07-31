@@ -1,6 +1,6 @@
 # L3 — Element Design Concept
 
-## Purpose and shape
+## Purpose and Shape
 
 The non-technical design of **one element**, described in enough detail to implement it. An element can be a smartphone app, a web app, a server element, or a whole complicated system.
 
@@ -42,7 +42,7 @@ What the element shall achieve. Goals provide the rationale for the element's ex
 - `RATIONALE` *(optional)* — which L2 system goal this supports.
 - Relation `Satisfies → SG-`
 
-## Use cases
+## Use Cases
 
 A use case is a functionality the element provides to a user: exactly one main scenario plus any number of alternative scenarios.
 
@@ -69,11 +69,11 @@ The template is firm on this and the reasoning is sound. Most logic, including c
 
 **Where a called function fails, the error is handled in that function's specification, not in the use case.** Alternative scenarios at this level cover failures the *use case* must respond to, not every error the machinery beneath it can produce.
 
-### Alternative scenarios
+### Alternative Scenarios
 
 The template's convention is to reference the step and append a letter — `3a`, and `3a, 4a, 5a` for multi-step alternatives. Here an `EX-` node carries `Extends → ST-` instead, which makes the anchor a checked reference rather than a lettering convention that goes stale the moment a step is inserted. `OUTCOME` records `Resume`, `Terminate` or `Alternative-success`.
 
-## User interfaces
+## User Interfaces
 
 A user interface gives a user access to the element's functionality. The focus is on **what is visible**, what data is displayed, and what actions are available — not the implementation of those actions.
 
@@ -90,7 +90,7 @@ Four content fields, following the template:
 
 **Detailed behaviour belongs elsewhere.** Which functions are called, how data is processed, how errors are handled, what happens next — all of that is in the referenced use cases and technical functions. A UI specification that explains error handling has absorbed content from two other sections.
 
-## Technical functions
+## Technical Functions
 
 Internal functionality the element performs. `TF-` is composite, with `FS-` steps and `FA-` alternatives as children.
 
@@ -132,7 +132,7 @@ So a function with no goal relation is normal, not an orphan. `DERIVED: Yes` is 
 
 `DETAIL_LEVEL` records whether the flow is elaborated into step nodes (`Stepwise`) or described in prose (`Narrative`). A utility function rarely warrants steps; recording the choice stops a reviewer reading the variation as inconsistency.
 
-## Technical interfaces (inbound)
+## Technical Interfaces (inbound)
 
 Interfaces this element **provides** so other elements can access its data or functionality.
 
@@ -157,7 +157,7 @@ Interfaces this element **provides** so other elements can access its data or fu
 
 `ERROR_CASES` should separate immediate errors — validation, authentication — from processing errors, which an asynchronous interface may report via callback.
 
-## Technical interfaces (outbound)
+## Technical Interfaces (outbound)
 
 Interfaces this element **uses** to reach partner elements in the system context.
 
@@ -201,7 +201,7 @@ The attribute-reference check closes that gap. It reports references to attribut
 
 Still prefer referring to attributes by name as well as ID, so that a reference remains readable to a person even when the ID is correct.
 
-## Quality requirements
+## Quality Requirements
 
 How well the element performs its functions.
 

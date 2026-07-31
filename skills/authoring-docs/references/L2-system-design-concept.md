@@ -1,6 +1,6 @@
 # L2 — System Design Concept
 
-## Purpose and shape
+## Purpose and Shape
 
 The overall technical architecture of the solution at system level: structure, components and their interactions, before any individual element is designed in detail.
 
@@ -10,7 +10,7 @@ The overall technical architecture of the solution at system level: structure, c
 | **Purpose** | Describe **how** the solution works, as system-level architecture |
 | **Provides** | Context for the L3 element designs |
 
-## Scope boundaries — including a fifth document
+## Scope Boundaries — including a fifth document
 
 Three boundaries matter here, and the third is easy to miss:
 
@@ -22,7 +22,7 @@ Three boundaries matter here, and the third is easy to miss:
 
 The practical test on hardware: "10–12 inch touchscreen with camera" belongs at L2; "2.4 GHz quad-core, 4 GB RAM" does not.
 
-## Document evolution
+## Document Evolution
 
 Created early in the design phase to establish the architecture. References to element designs accumulate as those get written. System goals, quality requirements and constraints get refined as implementation detail emerges. The architecture diagram must be kept current — a stale diagram is actively worse than none, because readers trust it.
 
@@ -39,7 +39,7 @@ Created early in the design phase to establish the architecture. References to e
 | Constraints | `SC-` |
 | Appendix *(optional)* | — |
 
-## System goals
+## System Goals
 
 What the technical system shall achieve as part of the solution, stated so technical people can act on it. Focus on the *what* and *why* at system level; the *how* is system scenarios and element designs.
 
@@ -51,7 +51,7 @@ What the technical system shall achieve as part of the solution, stated so techn
 
 This is checked mechanically by the coverage script, which also reports the related case of a scenario whose prose claims a coverage its relations do not declare.
 
-## Architecture overview
+## Architecture Overview
 
 **Architecture style** — client-server, three-tier, microservices, event-driven, layered. One line, stated explicitly rather than left for the reader to infer from the diagram.
 
@@ -63,7 +63,7 @@ Examples of the right grain: separation of concerns between client and backend; 
 
 Note that `AP-` is an addition to the source template, which presents principles as a bulleted list. The section content is identical; only the addressability differs.
 
-## Architecture diagram
+## Architecture Diagram
 
 The diagram should show every user type, software element, hardware element and partner element; the primary interactions and data flows; the system boundary between internal and external; and the major groupings or layers.
 
@@ -84,9 +84,9 @@ The template recommends a specific notation. Mermaid equivalents:
 
 Detailed interaction flows belong in system scenarios, not in the diagram.
 
-## System elements
+## System Elements
 
-### User types
+### User Types
 
 The human users who interact with the system.
 
@@ -97,7 +97,7 @@ The human users who interact with the system.
 
 Note the relation target: **a user type represents a `VCA-` element, not a `VP-` value proposition.** The template is explicit ("Represents VCA-01 (Students)"), and it follows from the L1 model, where `VCA-` elements include `Customer` and `Organisation` types alongside digital elements. If the L1 document has no customer-type `VCA-` elements, that is a gap at L1 rather than a reason to point the relation elsewhere.
 
-### Software elements
+### Software Elements
 
 Applications, services and systems that are part of this solution and will be developed, configured or customised as part of the project.
 
@@ -109,7 +109,7 @@ Applications, services and systems that are part of this solution and will be de
 
 Every software element needing detailed design gets an L3 document. The template asks for an "Element Design" reference field; do not add one — see the derived-references rule below.
 
-### Hardware elements
+### Hardware Elements
 
 The physical devices and infrastructure the software runs on. This section is what gives a reader a tangible sense of the system's physical presence.
 
@@ -130,7 +130,7 @@ An unstated procurement position is how hardware cost gets discovered late in a 
 
 Where a system genuinely has no hardware elements, keep one stating that explicitly rather than deleting the section. An absent section reads as an oversight; "no server-side deployment; runs entirely on user devices" is information.
 
-### Partner elements
+### Partner Elements
 
 External systems, services and platforms the solution integrates with but does not own or control — payment gateways, authentication systems, cloud services, third-party APIs.
 
@@ -141,7 +141,7 @@ External systems, services and platforms the solution integrates with but does n
 
 **Technical integration detail does not belong here.** API specifications, authentication methods, data exchange formats, error handling and retry strategy go in the outbound technical interface sections (`TO-`) of the calling elements' L3 documents.
 
-## System scenarios
+## System Scenarios
 
 Essential end-to-end flows showing how the system as a whole achieves its goals, focused on which elements interact with which.
 
@@ -153,7 +153,7 @@ The template makes a point worth preserving: not every scenario needs the same e
 
 `DETAIL_LEVEL` records which was chosen — `Detailed` or `Narrative`. Recording it stops a reviewer reading variation as inconsistency, which is the usual fate of a document with mixed depth.
 
-### Writing steps
+### Writing Steps
 
 **Always use element IDs.**
 
@@ -175,7 +175,7 @@ The template makes a point worth preserving: not every scenario needs the same e
 
 `SSt-` fields: `PERFORMED_BY` for the acting element, `AFFECTS` for the elements affected.
 
-### Alternative flows
+### Alternative Flows
 
 `SA-` nodes for significant alternative paths: errors affecting the overall flow, alternative user choices leading to different element interactions, partner element failures. Each carries `Extends → SSt-` naming the step it branches from, and an `OUTCOME` of `Resume`, `Terminate` or `Alternative-success`.
 
@@ -185,7 +185,7 @@ Keep them high-level. Detailed error handling belongs at L3.
 
 The template offers a "Realized through Use Cases" field for simple scenarios, and inline references within steps for complex ones. **Do not add the field** — `UC-` nodes at L3 declare `Realises → SSc-`, so the scenario page shows "Realised by" automatically. Inline references inside a step are fine where they genuinely aid comprehension, as prose.
 
-## Quality requirements
+## Quality Requirements
 
 How well the *entire system* performs — not individual elements, which is L3. This is where an L1 business quality requirement becomes a number.
 

@@ -119,7 +119,7 @@ One node per constraint, not one node listing several. Each constraint gets refi
 
 All prose. Timeline phases with durations, stating whether they are estimates or commitments. Transformation framework, evaluation windows, agreed fallback conditions. Process steps, formal acceptance criteria and stakeholder commitments — referencing the relevant `RSK-` node where adoption is a named risk.
 
-## Document control
+## Document Control
 
 The framework expects version, date, authors, reviewers, approvers, status and next review date. These live in the document's `METADATA` block rather than as a section, so they appear in the header rather than competing with content:
 

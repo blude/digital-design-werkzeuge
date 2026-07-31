@@ -77,7 +77,7 @@ This is the template's most distinctive instruction and it is worth following li
 
 The point of the format is that vague visions survive bulleted lists but not press releases. "Improved efficiency" cannot be written as a quote from a named person describing their Tuesday.
 
-### Business goals
+### Business Goals
 
 `BG-` nodes break the vision into specific objectives. Each has a description of two or three sentences saying what should be achieved and why it matters from a business perspective.
 
@@ -91,7 +91,7 @@ Use **qualitative** criteria where the goal is a strategic objective, an enabled
 
 Note that `OBLIGATION`, `PRIORITY` and `STATUS` on business goals are additions to the source template, carried over from the IREB attribute scheme. They are useful for filtering and review workflow. Removing them from the grammar would not break anything else.
 
-## Value proposition
+## Value Proposition
 
 One `VP-` node per customer segment. **The executive summary is only warranted with four or more segments** — below that it repeats the specifications that follow it.
 
@@ -106,7 +106,7 @@ Fields worth attention:
 
 Each `VP-` should `Satisfies` a business goal, and where an L0 brief exists, `Refines` the `SH-` stakeholder group it corresponds to.
 
-## Value creation architecture
+## Value Creation Architecture
 
 `VCA-` nodes are the elements working together to deliver the value proposition. `ELEMENT_TYPE` follows the template exactly:
 
@@ -125,7 +125,7 @@ Each `VP-` should `Satisfies` a business goal, and where an L0 brief exists, `Re
 
 The executive summary here should carry a diagram showing customers who receive value, the internal and external organisations involved, the digital elements, and the key relationships. Mermaid is available; label nodes with their `VCA-` IDs.
 
-## Information architecture
+## Information Architecture
 
 `BE-` nodes are the key information concepts in the business domain, described in one or two sentences each.
 
@@ -134,7 +134,7 @@ The executive summary here should carry a diagram showing customers who receive 
 
 Most solutions have three to six business entities at this level. An entity list that runs to twenty is usually a database schema in business clothing.
 
-## Business processes
+## Business Processes
 
 The main processes necessary for delivering value. Essential business activities only — what stakeholders need to understand.
 
@@ -160,7 +160,7 @@ Guidelines: business language, not technical implementation. What happens and wh
 
 **Keep these high-level.** Detailed error handling belongs at L3. If an alternative flow is describing what happens when a field fails validation, it is at the wrong level.
 
-## Quality requirements
+## Quality Requirements
 
 `BQR-` nodes are business-level quality expectations, stated from the stakeholder perspective.
 
@@ -203,7 +203,7 @@ This is a deliberate difference from L2 and L3, which use technical quality attr
 
 Where an L0 brief exists, each `BC-` should `Refines` the `BRC-` brief-level constraint it derives from. As with quality requirements, not every business constraint translates into a system constraint — some are satisfied by the overall approach or by process design.
 
-## Document control and appendix
+## Document Control and Appendix
 
 The template carries a version table. In StrictDoc this belongs in the document `METADATA` block rather than as a section, since git already holds the history.
 
