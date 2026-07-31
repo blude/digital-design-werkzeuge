@@ -1,16 +1,5 @@
 # SKILL / plugin development
 
-# Build and binary artifacts
-*.exe
-*.dll
-*.so
-*.dylib
-*.bundle
-*.o
-*.obj
-*.class
-*.jar
-
 # Local development and generated files
 build/
 dist/
