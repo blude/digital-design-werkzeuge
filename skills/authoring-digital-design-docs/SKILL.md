@@ -1,5 +1,5 @@
 ---
-name: digital-design-docs
+name: authoring-digital-design-docs
 description: Generate hierarchical design documentation using the four-level framework (L0 Digital Design Brief, L1 Solution Design Concept, L2 System Design Concept, L3 Element Design Concept) as validated StrictDoc documents with typed requirements and cross-level traceability. Use this skill whenever the user mentions a design brief, solution design concept, system design concept, element design concept, L0/L1/L2/L3 design documents, or asks to write, extend, review or validate requirements documentation in this four-level structure — including when they only name one level, refer to it loosely as "the design docs" or "the spec", ask for a Go/No-Go brief, or want requirements with IDs like BG-01, SE-02, UC-03. Also use it when they ask to add a requirement, use case, system element or constraint to existing documents in this structure, since new nodes must match the level's grammar and trace to a parent.
 ---
 
