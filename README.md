@@ -34,3 +34,7 @@ Use these assets when you want to create or refine:
 ## Notes
 
 This project is intentionally instruction-driven and content-focused. The goal is to make design documentation easier to create, validate, and maintain consistently.
+
+## License
+
+MIT
