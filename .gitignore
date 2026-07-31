@@ -1,0 +1,32 @@
+# SKILL / plugin development
+
+# Build and binary artifacts
+*.exe
+*.dll
+*.so
+*.dylib
+*.bundle
+*.o
+*.obj
+*.class
+*.jar
+
+# Local development and generated files
+build/
+dist/
+out/
+coverage/
+*.log
+*.tmp
+*.swp
+*.swo
+*.DS_Store
+
+# Editor and IDE files
+.vscode/
+.idea/
+
+# Environment and secrets
+.env
+.env.*
+*.local

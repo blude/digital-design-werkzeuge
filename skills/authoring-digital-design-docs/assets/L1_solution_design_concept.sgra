@@ -1,0 +1,330 @@
+[GRAMMAR]
+ELEMENTS:
+- TAG: SECTION
+  PROPERTIES:
+    IS_COMPOSITE: True
+    PREFIX: None
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: False
+  - TITLE: LEVEL
+    TYPE: String
+    REQUIRED: False
+  - TITLE: PREFIX
+    TYPE: String
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+- TAG: TEXT
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: False
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+- TAG: BUSINESS_GOAL
+  PROPERTIES:
+    PREFIX: BG-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: OBLIGATION
+    TYPE: SingleChoice(shall, should, will)
+    REQUIRED: True
+  - TITLE: PRIORITY
+    TYPE: SingleChoice(Must, Should, Could, Wont)
+    REQUIRED: True
+  - TITLE: STATUS
+    TYPE: SingleChoice(Draft, In-Review, Approved, Released, Rejected)
+    REQUIRED: True
+  - TITLE: SOURCE
+    TYPE: String
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: SUCCESS_CRITERIA
+    TYPE: String
+    REQUIRED: False
+  - TITLE: RATIONALE
+    TYPE: String
+    REQUIRED: False
+  RELATIONS:
+  - TYPE: Parent
+    ROLE: Satisfies
+    REVERSE_ROLE: Satisfied by
+- TAG: VALUE_PROPOSITION
+  PROPERTIES:
+    PREFIX: VP-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: CUSTOMER_SEGMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: SEGMENT_SIZE
+    TYPE: String
+    REQUIRED: False
+  - TITLE: STATUS
+    TYPE: SingleChoice(Draft, In-Review, Approved, Released, Rejected)
+    REQUIRED: True
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: SEGMENT_CHARACTERISTICS
+    TYPE: String
+    REQUIRED: False
+  - TITLE: VALUE_DELIVERED
+    TYPE: String
+    REQUIRED: False
+  - TITLE: PAINS_ADDRESSED
+    TYPE: String
+    REQUIRED: False
+  - TITLE: CURRENT_ALTERNATIVES
+    TYPE: String
+    REQUIRED: False
+  - TITLE: WHY_BETTER
+    TYPE: String
+    REQUIRED: False
+  RELATIONS:
+  - TYPE: Parent
+    ROLE: Satisfies
+    REVERSE_ROLE: Satisfied by
+  - TYPE: Parent
+    ROLE: Refines
+    REVERSE_ROLE: Refined by
+- TAG: VALUE_CREATION_ELEMENT
+  PROPERTIES:
+    PREFIX: VCA-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: ELEMENT_TYPE
+    TYPE: SingleChoice(Customer, Organisation-internal, Organisation-external, Digital-element)
+    REQUIRED: True
+  - TITLE: STATUS
+    TYPE: SingleChoice(Draft, In-Review, Approved, Released, Rejected)
+    REQUIRED: True
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: ROLE_IN_VALUE_CREATION
+    TYPE: String
+    REQUIRED: False
+  - TITLE: INTERACTS_WITH
+    TYPE: String
+    REQUIRED: False
+  - TITLE: VALUE_FLOW
+    TYPE: String
+    REQUIRED: False
+  RELATIONS:
+  - TYPE: Parent
+    ROLE: Realises
+    REVERSE_ROLE: Realised by
+- TAG: BUSINESS_ENTITY
+  PROPERTIES:
+    PREFIX: BE-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATUS
+    TYPE: SingleChoice(Draft, In-Review, Approved, Released, Rejected)
+    REQUIRED: True
+  - TITLE: OWNER
+    TYPE: String
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: KEY_INFORMATION
+    TYPE: String
+    REQUIRED: False
+  - TITLE: ASSOCIATIONS
+    TYPE: String
+    REQUIRED: False
+- TAG: BUSINESS_PROCESS
+  PROPERTIES:
+    IS_COMPOSITE: True
+    PREFIX: BP-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATUS
+    TYPE: SingleChoice(Draft, In-Review, Approved, Released, Rejected)
+    REQUIRED: True
+  - TITLE: PROCESS_OWNER
+    TYPE: String
+    REQUIRED: True
+  - TITLE: TRIGGER
+    TYPE: String
+    REQUIRED: False
+  - TITLE: FREQUENCY
+    TYPE: String
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: INVOLVED_PARTIES
+    TYPE: String
+    REQUIRED: False
+  - TITLE: CREATES_UPDATES
+    TYPE: String
+    REQUIRED: False
+  - TITLE: PRECONDITION
+    TYPE: String
+    REQUIRED: False
+  - TITLE: OUTCOME
+    TYPE: String
+    REQUIRED: False
+  RELATIONS:
+  - TYPE: Parent
+    ROLE: Supports
+    REVERSE_ROLE: Supported by
+- TAG: PROCESS_STEP
+  PROPERTIES:
+    PREFIX: PS-
+    VIEW_STYLE: Plain
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: PERFORMED_BY
+    TYPE: String
+    REQUIRED: False
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: USES_CREATES
+    TYPE: String
+    REQUIRED: False
+  - TITLE: BUSINESS_RULES
+    TYPE: String
+    REQUIRED: False
+- TAG: PROCESS_ALTERNATIVE
+  PROPERTIES:
+    PREFIX: PA-
+    VIEW_STYLE: Inline
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: OUTCOME
+    TYPE: SingleChoice(Resume, Terminate, Alternative-success)
+    REQUIRED: True
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  RELATIONS:
+  - TYPE: Parent
+    ROLE: Extends
+    REVERSE_ROLE: Extended by
+- TAG: BUSINESS_QUALITY_REQUIREMENT
+  PROPERTIES:
+    PREFIX: BQR-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: QUALITY_CATEGORY
+    TYPE: SingleChoice(Business-performance, Customer-satisfaction, Service-quality, Operational-excellence, Compliance, Sustainability)
+    REQUIRED: True
+  - TITLE: OBLIGATION
+    TYPE: SingleChoice(shall, should, will)
+    REQUIRED: True
+  - TITLE: PRIORITY
+    TYPE: SingleChoice(Must, Should, Could, Wont)
+    REQUIRED: True
+  - TITLE: STATUS
+    TYPE: SingleChoice(Draft, In-Review, Approved, Released, Rejected)
+    REQUIRED: True
+  - TITLE: VERIFICATION
+    TYPE: MultipleChoice(Review, Analysis, Inspection, Test)
+    REQUIRED: True
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: APPLIES_TO
+    TYPE: String
+    REQUIRED: False
+  - TITLE: ACCEPTANCE_CRITERIA
+    TYPE: String
+    REQUIRED: False
+  - TITLE: RATIONALE
+    TYPE: String
+    REQUIRED: False
+  RELATIONS:
+  - TYPE: Parent
+    ROLE: Satisfies
+    REVERSE_ROLE: Satisfied by
+- TAG: BUSINESS_CONSTRAINT
+  PROPERTIES:
+    PREFIX: BC-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: CONSTRAINT_CATEGORY
+    TYPE: SingleChoice(Legal-regulatory, Business, Organisational, Market, Resource)
+    REQUIRED: True
+  - TITLE: STATUS
+    TYPE: SingleChoice(Draft, In-Review, Approved, Released, Rejected)
+    REQUIRED: True
+  - TITLE: SOURCE
+    TYPE: String
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: APPLIES_TO
+    TYPE: String
+    REQUIRED: False
+  - TITLE: ACCEPTANCE_CRITERIA
+    TYPE: String
+    REQUIRED: False
+  - TITLE: RATIONALE
+    TYPE: String
+    REQUIRED: False
+  RELATIONS:
+  - TYPE: Parent
+    ROLE: Refines
+    REVERSE_ROLE: Refined by

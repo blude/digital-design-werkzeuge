@@ -1,0 +1,547 @@
+[DOCUMENT]
+TITLE: L1 Solution Design Concept - TBD
+UID: TBD-L1
+VERSION: 0.1
+DATE: TBD
+CLASSIFICATION: Internal
+OPTIONS:
+  MARKUP: Markdown
+  VIEW_STYLE: Narrative
+METADATA:
+  LEVEL: L1 - Solution Design Concept
+  AUDIENCE: Business stakeholders, clients, project sponsors; designers and developers secondarily
+  PURPOSE: Describe WHAT the solution does from the business perspective
+  AUTHORS: TBD
+  DOC_STATUS: Draft
+
+[GRAMMAR]
+IMPORT_FROM_FILE: L1_solution_design_concept.sgra
+
+[TEXT]
+STATEMENT: >>>
+**Level 1 of 4 - Solution Design Concept.**
+
+The structure of the solution from the client's business perspective. This
+document bridges business strategy and technical implementation: it translates
+the vision into structured requirements, provides context for L2 and L3, and
+serves as the agreement point between business stakeholders and the technical
+team.
+
+**Layered approach.** Each major section opens with an executive summary for
+stakeholders who will read nothing else, followed by identified specifications
+that give designers structure and provide traceability downward.
+
+**Business language throughout.** No technical jargon. Describe *what* the
+solution does and *why*, never *how* it is built - that is L2.
+
+**This document can be developed iteratively.** Start with the vision and the
+executive summaries for stakeholder alignment, then outline the structured
+sections, then detail the high-priority elements first based on feedback.
+<<<
+
+[[SECTION]]
+UID: L1-VISION
+TITLE: Vision
+
+[TEXT]
+STATEMENT: >>>
+### Executive summary
+
+TBD - Write the vision as a **future press release**: an announcement, dated one
+to two years from now, of the solution's successful implementation. Written from
+the perspective of achieved success, it forces concrete outcomes rather than
+aspirations, and stakeholders engage with it in a way they do not with a bulleted
+vision statement.
+
+**Structure**
+
+1. **Opening** - the main achievement and its impact, in two or three sentences
+2. **A quote** from a key stakeholder describing the value they now get
+3. **Three or four paragraphs** on specific improvements, with concrete examples
+   of how daily work or operations changed
+4. **Closing** - future outlook and next steps
+
+**Rules**
+
+- Past tense or present perfect. "Students now book a room in seconds", not
+  "students will be able to book rooms".
+- Include perspectives from more than one stakeholder group - customers, staff
+  and management read different things as evidence.
+- Concrete examples over general claims. Name the situation that changed.
+- No technical detail. Business impact only.
+- One to two pages.
+<<<
+
+[[SECTION]]
+UID: L1-VISION-BG
+TITLE: Business goals
+
+[TEXT]
+STATEMENT: >>>
+Business goals break the vision down into specific objectives that guide the
+solution design.
+<<<
+
+[BUSINESS_GOAL]
+UID: BG-01
+OBLIGATION: shall
+PRIORITY: Must
+STATUS: Draft
+SOURCE: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - What should be achieved and why it matters from a business perspective.
+Two or three sentences.
+<<<
+SUCCESS_CRITERIA: >>>
+TBD - *Optional.* Measurable or observable criteria indicating the goal is
+achieved.
+
+Use **quantitative** criteria where business metrics, satisfaction, operational
+efficiency or adoption can be measured:
+- "Reduce average processing time from 25 minutes to 5 minutes"
+- "Achieve 80% adoption within the first semester"
+
+Use **qualitative** criteria where the goal is a strategic objective, an enabled
+capability, or compliance with a standard:
+- "Enable students to order without staff assistance"
+- "Provide complete allergen information for all menu items"
+<<<
+RATIONALE: >>>
+TBD - *Optional.* How this goal supports the vision. Link the specific objective
+back to the broader change described above.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: IMP-01
+  ROLE: Satisfies
+
+[[/SECTION]]
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L1-VP
+TITLE: Value proposition
+
+[TEXT]
+STATEMENT: >>>
+### Executive summary
+
+*Include this only if there are four or more customer segments.* Below that
+threshold it repeats the specifications that follow.
+
+TBD - A visual overview such as a Value Proposition Canvas, plus one or two
+paragraphs naming each segment and the value it receives.
+<<<
+
+[VALUE_PROPOSITION]
+UID: VP-01
+CUSTOMER_SEGMENT: TBD
+SEGMENT_SIZE: TBD
+STATUS: Draft
+TITLE: For TBD
+STATEMENT: >>>
+TBD - The value this segment receives. Benefits and outcomes, never features.
+<<<
+SEGMENT_CHARACTERISTICS: >>>
+TBD - Who this segment is and what matters about them for design purposes.
+<<<
+VALUE_DELIVERED: >>>
+TBD - Three to seven key benefits:
+
+- What problems does the solution solve for them?
+- What improvements will they experience?
+- What new capabilities do they gain?
+<<<
+PAINS_ADDRESSED: >>>
+TBD - The specific frustrations this removes.
+<<<
+CURRENT_ALTERNATIVES: >>>
+TBD - *Optional, for competitive contexts.* How this segment meets the need
+today without the solution. Be concrete: "standing in line for 20-30 minutes",
+"manual aggregation using paper forms and phone calls".
+<<<
+WHY_BETTER: >>>
+TBD - *Optional.* Why the proposed solution beats those alternatives. Time
+savings, convenience, quality, cost, or capabilities not previously available.
+Quantify where possible.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: BG-01
+  ROLE: Satisfies
+- TYPE: Parent
+  VALUE: SH-01
+  ROLE: Refines
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L1-VCA
+TITLE: Value creation architecture
+
+[TEXT]
+STATEMENT: >>>
+### Executive summary
+
+TBD - One or two paragraphs on the overall value creation structure: who the
+main stakeholder groups are, what role the digital elements play, and how value
+flows through the architecture.
+
+Include a diagram showing customers who receive value, the internal and external
+organisations involved, the digital elements that enable value creation, and the
+key relationships between them.
+
+```mermaid
+graph LR
+  CUST["VCA-01 TBD customer"]
+  ORG["VCA-02 TBD organisation"]
+  DIG["VCA-03 TBD digital element"]
+  CUST --> DIG
+  DIG --> ORG
+```
+<<<
+
+[VALUE_CREATION_ELEMENT]
+UID: VCA-01
+ELEMENT_TYPE: Digital-element
+STATUS: Draft
+TITLE: TBD
+STATEMENT: >>>
+TBD - This element and its role in value creation, in two or three sentences.
+
+For a **customer**: who they are and what they want to achieve.
+For an **organisation**: what they do and what they are responsible for.
+For a **digital element**: what capability it provides.
+
+*Granularity for digital elements:* for a simple solution, the whole technical
+system can be one digital element ("The Platform"). Break it down only where the
+distinction matters to business stakeholders. L2 provides the technical
+decomposition into software elements regardless of how many digital elements are
+named here.
+<<<
+ROLE_IN_VALUE_CREATION: >>>
+TBD - What this element does to create or deliver value. For customers, how they
+interact and what they receive; for organisations, what activities they perform;
+for digital elements, what functionality they enable.
+<<<
+INTERACTS_WITH: >>>
+TBD - Other value creation elements this one interacts with, as inline links:
+[LINK: VCA-02].
+
+These are peer relationships rather than hierarchy, so they are recorded as
+links rather than as relations - a lateral relation modelled as Parent breaks
+the traceability graph.
+<<<
+VALUE_FLOW: >>>
+TBD - For a customer, the value received (reference the VP). For an organisation
+or digital element, the value it provides or enables.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VP-01
+  ROLE: Realises
+
+[VALUE_CREATION_ELEMENT]
+UID: VCA-02
+ELEMENT_TYPE: Organisation-internal
+STATUS: Draft
+TITLE: TBD
+STATEMENT: >>>
+TBD - A second element, so the interaction between them can be shown. Delete if
+the architecture genuinely has one element.
+<<<
+ROLE_IN_VALUE_CREATION: >>>
+TBD
+<<<
+INTERACTS_WITH: >>>
+TBD - [LINK: VCA-01]
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VP-01
+  ROLE: Realises
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L1-IA
+TITLE: Information architecture
+
+[TEXT]
+STATEMENT: >>>
+### Executive summary
+
+TBD - One or two paragraphs on the core business information the solution
+manages, and how it flows between the stakeholder groups.
+
+Include a diagram of the main business entities, their relationships, and their
+key attributes at a high level.
+
+```mermaid
+erDiagram
+  ENTITY_A ||--o{ ENTITY_B : "TBD relationship"
+```
+<<<
+
+[BUSINESS_ENTITY]
+UID: BE-01
+STATUS: Draft
+OWNER: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - What this entity represents in the business domain. One or two sentences.
+<<<
+KEY_INFORMATION: >>>
+TBD - Five to ten categories of business-relevant information. Not technical
+implementation detail.
+
+- Descriptive attributes
+- Identifiers and references
+- Business-relevant properties
+- Status or state
+- Lifecycle or timestamps
+<<<
+ASSOCIATIONS: >>>
+TBD - How this entity relates to others, as "description ([LINK: BE-02])".
+
+Note: the field is ASSOCIATIONS, not RELATIONSHIPS - any field name beginning
+with RELATIONS is rejected by the parser.
+<<<
+
+[BUSINESS_ENTITY]
+UID: BE-02
+STATUS: Draft
+OWNER: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - A second entity, so a relationship can be shown. Most solutions have
+three to six business entities at this level.
+<<<
+KEY_INFORMATION: >>>
+- TBD
+<<<
+ASSOCIATIONS: >>>
+TBD - [LINK: BE-01]
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L1-BP
+TITLE: Business processes
+
+[TEXT]
+STATEMENT: >>>
+### Executive summary
+
+TBD - One paragraph listing and briefly describing each main business process,
+numbered, so a stakeholder can see the whole set before reading any one of them.
+
+A diagram showing the processes and their relationships helps here.
+<<<
+
+[[BUSINESS_PROCESS]]
+UID: BP-01
+STATUS: Draft
+PROCESS_OWNER: TBD
+TRIGGER: TBD
+FREQUENCY: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - Two or three sentences for stakeholders: what happens, who is involved,
+what is achieved, and how often or how long it takes.
+<<<
+INVOLVED_PARTIES: >>>
+TBD - The value creation elements participating, as inline links: customers who
+initiate, organisations that execute, digital elements that support, external
+partners. [LINK: VCA-01]
+<<<
+CREATES_UPDATES: >>>
+TBD - Business entities this process creates, modifies or uses, as
+"Action: entity ([LINK: BE-01])":
+
+- Creates: TBD
+- Updates: TBD
+- Uses: TBD
+<<<
+PRECONDITION: >>>
+TBD
+<<<
+OUTCOME: >>>
+TBD
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: BG-01
+  ROLE: Supports
+
+[PROCESS_STEP]
+UID: PS-01-1
+PERFORMED_BY: TBD
+STATEMENT: >>>
+TBD - One business activity. Business language, not technical implementation.
+Order is document order; never number in the text.
+<<<
+USES_CREATES: >>>
+TBD - *Optional.* Business information involved: [LINK: BE-01]
+<<<
+BUSINESS_RULES: >>>
+TBD - *Optional.* Rules or conditions applying to this step.
+<<<
+
+[PROCESS_STEP]
+UID: PS-01-2
+PERFORMED_BY: TBD
+STATEMENT: >>>
+TBD - Typical processes have five to fifteen steps. Keep them at business
+activity level.
+<<<
+
+[PROCESS_ALTERNATIVE]
+UID: PA-01-1
+OUTCOME: Resume
+TITLE: TBD
+STATEMENT: >>>
+TBD - A major alternative path: an error the business cares about, an
+alternative user choice that changes the flow, or business-level exception
+handling.
+
+Keep these high-level. Detailed error handling belongs at L3. The Extends
+relation names the step this branches from, which is what makes the anchor
+checkable rather than a numbering convention.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: PS-01-2
+  ROLE: Extends
+
+[[/BUSINESS_PROCESS]]
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L1-BQR
+TITLE: Quality requirements
+
+[TEXT]
+STATEMENT: >>>
+Business-level quality expectations that must be met for the solution to be
+considered successful. Stated from the stakeholder perspective, in business
+categories rather than technical quality attributes - those appear at L2 as SQR
+items refining these.
+<<<
+
+[BUSINESS_QUALITY_REQUIREMENT]
+UID: BQR-01
+QUALITY_CATEGORY: Customer-satisfaction
+OBLIGATION: shall
+PRIORITY: Must
+STATUS: Draft
+VERIFICATION: Review
+TITLE: TBD
+STATEMENT: >>>
+TBD - What aspect of business quality is specified and why it matters to
+stakeholders. Two or three sentences.
+
+Categories: `Business-performance` for revenue, cost, efficiency and
+productivity; `Customer-satisfaction` for satisfaction, retention and adoption;
+`Service-quality` for availability, reliability and accuracy as the business
+sees them; `Operational-excellence` for process quality and resource
+utilisation; `Compliance` for regulatory and policy requirements;
+`Sustainability` for environmental impact and long-term viability.
+<<<
+APPLIES_TO: >>>
+TBD - Which business elements this primarily affects: [LINK: BP-01],
+[LINK: VP-01], [LINK: VCA-01], or the overall business solution.
+<<<
+ACCEPTANCE_CRITERIA: >>>
+TBD - Clear, testable, verifiable from a business perspective.
+
+**Quantitative** where metrics, satisfaction, performance, adoption or service
+levels can be measured - include the number:
+- "Satisfaction score >= 85% in quarterly surveys"
+- "Available during all operating hours, 06:00-20:00 weekdays"
+
+**Qualitative** where assessment is subjective, compliance is binary, or the
+requirement is a capability - use a clear pass/fail condition:
+- "Students can complete ordering without staff assistance"
+- "All allergens clearly communicated to customers"
+<<<
+RATIONALE: >>>
+TBD - *Optional.*
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: BG-01
+  ROLE: Satisfies
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L1-BC
+TITLE: Constraints
+
+[TEXT]
+STATEMENT: >>>
+Non-negotiable requirements limiting design and implementation choices. They
+come from outside - laws, regulations, budgets, timelines, organisational
+policy - and are not trade-offs to be balanced.
+<<<
+
+[BUSINESS_CONSTRAINT]
+UID: BC-01
+CONSTRAINT_CATEGORY: Legal-regulatory
+STATUS: Draft
+SOURCE: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - What the constraint requires or restricts, and why it exists from a
+business perspective. Two or three sentences.
+
+Categories: `Legal-regulatory` for laws, regulations and compliance;
+`Business` for budget limits, timelines and organisational policy;
+`Organisational` for existing processes, structures or capabilities that must be
+accommodated; `Market` for competitive pressure, customer expectations and
+industry norms; `Resource` for staff, skills and infrastructure limitations.
+<<<
+APPLIES_TO: >>>
+TBD - Which business elements are affected: [LINK: BP-01], [LINK: VP-01],
+[LINK: VCA-01], or the overall business solution.
+<<<
+ACCEPTANCE_CRITERIA: >>>
+TBD - What demonstrates compliance, from a business perspective.
+
+**Quantitative** where the constraint has amounts, dates or limits:
+- "Total budget not to exceed 150,000"
+- "Operational by the start of the autumn term"
+- "Personal data retained for a maximum of 24 months"
+
+**Qualitative** where compliance is binary or an approach is mandated:
+- "Complies with GDPR requirements for personal data handling"
+- "Uses the existing university authentication system; no new login"
+<<<
+RATIONALE: >>>
+TBD - *Optional.*
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: BRC-01
+  ROLE: Refines
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L1-APPENDIX
+TITLE: Appendix
+
+[TEXT]
+STATEMENT: >>>
+*Optional section.* Supplementary material that supports but does not belong in
+the body: extended design rationale, records of discarded alternatives, results
+from technical spikes or prototypes, input from domain experts or external
+review.
+<<<
+
+[[/SECTION]]

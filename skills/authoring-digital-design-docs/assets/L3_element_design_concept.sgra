@@ -1,0 +1,457 @@
+[GRAMMAR]
+ELEMENTS:
+- TAG: SECTION
+  PROPERTIES:
+    IS_COMPOSITE: True
+    PREFIX: None
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: False
+  - TITLE: LEVEL
+    TYPE: String
+    REQUIRED: False
+  - TITLE: PREFIX
+    TYPE: String
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+- TAG: TEXT
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: False
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+- TAG: GOAL
+  PROPERTIES:
+    PREFIX: G-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: OBLIGATION
+    TYPE: SingleChoice(shall, should, will)
+    REQUIRED: True
+  - TITLE: PRIORITY
+    TYPE: SingleChoice(Must, Should, Could, Wont)
+    REQUIRED: True
+  - TITLE: STATUS
+    TYPE: SingleChoice(Draft, In-Review, Approved, Released, Rejected)
+    REQUIRED: True
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: SUCCESS_CRITERIA
+    TYPE: String
+    REQUIRED: False
+  - TITLE: RATIONALE
+    TYPE: String
+    REQUIRED: False
+  RELATIONS:
+  - TYPE: Parent
+    ROLE: Satisfies
+    REVERSE_ROLE: Satisfied by
+- TAG: USE_CASE
+  PROPERTIES:
+    IS_COMPOSITE: True
+    PREFIX: UC-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATUS
+    TYPE: SingleChoice(Draft, In-Review, Approved, Released, Rejected)
+    REQUIRED: True
+  - TITLE: PRIORITY
+    TYPE: SingleChoice(Must, Should, Could, Wont)
+    REQUIRED: True
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: ACTORS
+    TYPE: String
+    REQUIRED: False
+  - TITLE: PREREQUISITES
+    TYPE: String
+    REQUIRED: False
+  - TITLE: POSTCONDITION
+    TYPE: String
+    REQUIRED: False
+  RELATIONS:
+  - TYPE: Parent
+    ROLE: Achieves
+    REVERSE_ROLE: Achieved by
+  - TYPE: Parent
+    ROLE: Realises
+    REVERSE_ROLE: Realised by
+- TAG: STEP
+  PROPERTIES:
+    PREFIX: ST-
+    VIEW_STYLE: Plain
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STEP_TYPE
+    TYPE: SingleChoice(User-interaction, Function-call, Outbound-call, Activity)
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: REFERENCES
+    TYPE: String
+    REQUIRED: False
+  - TITLE: DATA
+    TYPE: String
+    REQUIRED: False
+- TAG: EXTENSION
+  PROPERTIES:
+    PREFIX: EX-
+    VIEW_STYLE: Inline
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: OUTCOME
+    TYPE: SingleChoice(Resume, Terminate, Alternative-success)
+    REQUIRED: True
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  RELATIONS:
+  - TYPE: Parent
+    ROLE: Extends
+    REVERSE_ROLE: Extended by
+- TAG: USER_INTERFACE
+  PROPERTIES:
+    PREFIX: UI-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATUS
+    TYPE: SingleChoice(Draft, In-Review, Approved, Released, Rejected)
+    REQUIRED: True
+  - TITLE: USER_TYPE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: VISIBLE_DATA
+    TYPE: String
+    REQUIRED: False
+  - TITLE: ACTIONS
+    TYPE: String
+    REQUIRED: False
+  - TITLE: INPUT_FIELDS
+    TYPE: String
+    REQUIRED: False
+  - TITLE: NAVIGATION
+    TYPE: String
+    REQUIRED: False
+  RELATIONS:
+  - TYPE: Parent
+    ROLE: Realises
+    REVERSE_ROLE: Realised by
+- TAG: TECHNICAL_FUNCTION
+  PROPERTIES:
+    IS_COMPOSITE: True
+    PREFIX: TF-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: OBLIGATION
+    TYPE: SingleChoice(shall, should, will)
+    REQUIRED: True
+  - TITLE: PRIORITY
+    TYPE: SingleChoice(Must, Should, Could, Wont)
+    REQUIRED: True
+  - TITLE: STATUS
+    TYPE: SingleChoice(Draft, In-Review, Approved, Released, Rejected)
+    REQUIRED: True
+  - TITLE: VERIFICATION
+    TYPE: MultipleChoice(Review, Analysis, Inspection, Test)
+    REQUIRED: True
+  - TITLE: DETAIL_LEVEL
+    TYPE: SingleChoice(Stepwise, Narrative)
+    REQUIRED: True
+  - TITLE: DERIVED
+    TYPE: SingleChoice(No, Yes)
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: INPUT
+    TYPE: String
+    REQUIRED: False
+  - TITLE: OUTPUT
+    TYPE: String
+    REQUIRED: False
+  - TITLE: ACCEPTANCE_CRITERIA
+    TYPE: String
+    REQUIRED: False
+  - TITLE: RATIONALE
+    TYPE: String
+    REQUIRED: False
+  RELATIONS:
+  - TYPE: Parent
+    ROLE: Achieves
+    REVERSE_ROLE: Achieved by
+  - TYPE: Parent
+    ROLE: Constrained by
+    REVERSE_ROLE: Constrains
+  - TYPE: File
+- TAG: FUNCTION_STEP
+  PROPERTIES:
+    PREFIX: FS-
+    VIEW_STYLE: Plain
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STEP_TYPE
+    TYPE: SingleChoice(Data-operation, Entity-access, Function-call, Outbound-call)
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: REFERENCES
+    TYPE: String
+    REQUIRED: False
+  - TITLE: CALL_BEHAVIOUR
+    TYPE: String
+    REQUIRED: False
+- TAG: FUNCTION_ALTERNATIVE
+  PROPERTIES:
+    PREFIX: FA-
+    VIEW_STYLE: Inline
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: OUTCOME
+    TYPE: SingleChoice(Resume, Terminate, Alternative-success)
+    REQUIRED: True
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  RELATIONS:
+  - TYPE: Parent
+    ROLE: Extends
+    REVERSE_ROLE: Extended by
+- TAG: TECHNICAL_INTERFACE_IN
+  PROPERTIES:
+    PREFIX: TI-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: CALL_TYPE
+    TYPE: SingleChoice(Synchronous, Asynchronous)
+    REQUIRED: True
+  - TITLE: STATUS
+    TYPE: SingleChoice(Draft, In-Review, Approved, Released, Rejected)
+    REQUIRED: True
+  - TITLE: PROTOCOL
+    TYPE: String
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: CALLING_ELEMENTS
+    TYPE: String
+    REQUIRED: False
+  - TITLE: INPUT
+    TYPE: String
+    REQUIRED: False
+  - TITLE: OUTPUT
+    TYPE: String
+    REQUIRED: False
+  - TITLE: ACTION
+    TYPE: String
+    REQUIRED: False
+  - TITLE: ERROR_CASES
+    TYPE: String
+    REQUIRED: False
+- TAG: TECHNICAL_INTERFACE_OUT
+  PROPERTIES:
+    PREFIX: TO-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: CALL_TYPE
+    TYPE: SingleChoice(Synchronous, Asynchronous)
+    REQUIRED: True
+  - TITLE: STATUS
+    TYPE: SingleChoice(Draft, In-Review, Approved, Released, Rejected)
+    REQUIRED: True
+  - TITLE: PROTOCOL
+    TYPE: String
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: INPUT
+    TYPE: String
+    REQUIRED: False
+  - TITLE: OUTPUT
+    TYPE: String
+    REQUIRED: False
+  - TITLE: ERROR_CASES
+    TYPE: String
+    REQUIRED: False
+  - TITLE: AUTHORITATIVE_SPEC
+    TYPE: String
+    REQUIRED: False
+  RELATIONS:
+  - TYPE: Parent
+    ROLE: Calls
+    REVERSE_ROLE: Called by
+- TAG: ENTITY
+  PROPERTIES:
+    PREFIX: E-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATUS
+    TYPE: SingleChoice(Draft, In-Review, Approved, Released, Rejected)
+    REQUIRED: True
+  - TITLE: PERSISTENCE
+    TYPE: SingleChoice(In-memory, Cached, Persistent, Derived, Transient)
+    REQUIRED: True
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: ATTRIBUTES
+    TYPE: String
+    REQUIRED: False
+  RELATIONS:
+  - TYPE: Parent
+    ROLE: Refines
+    REVERSE_ROLE: Refined by
+- TAG: QUALITY_REQUIREMENT
+  PROPERTIES:
+    PREFIX: QR-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: QUALITY_CATEGORY
+    TYPE: SingleChoice(Performance, Scalability, Availability, Security, Usability, Maintainability, Compatibility, Data-integrity, Compliance)
+    REQUIRED: True
+  - TITLE: OBLIGATION
+    TYPE: SingleChoice(shall, should, will)
+    REQUIRED: True
+  - TITLE: PRIORITY
+    TYPE: SingleChoice(Must, Should, Could, Wont)
+    REQUIRED: True
+  - TITLE: STATUS
+    TYPE: SingleChoice(Draft, In-Review, Approved, Released, Rejected)
+    REQUIRED: True
+  - TITLE: VERIFICATION
+    TYPE: MultipleChoice(Review, Analysis, Inspection, Test)
+    REQUIRED: True
+  - TITLE: ELEMENT_SPECIFIC
+    TYPE: SingleChoice(No, Yes)
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: APPLIES_TO
+    TYPE: String
+    REQUIRED: False
+  - TITLE: ACCEPTANCE_CRITERIA
+    TYPE: String
+    REQUIRED: False
+  - TITLE: RATIONALE
+    TYPE: String
+    REQUIRED: False
+  RELATIONS:
+  - TYPE: Parent
+    ROLE: Supports
+    REVERSE_ROLE: Supported by
+- TAG: CONSTRAINT
+  PROPERTIES:
+    PREFIX: C-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: CONSTRAINT_CATEGORY
+    TYPE: SingleChoice(Legal-regulatory, Technical, Business, Integration, Standards)
+    REQUIRED: True
+  - TITLE: STATUS
+    TYPE: SingleChoice(Draft, In-Review, Approved, Released, Rejected)
+    REQUIRED: True
+  - TITLE: SOURCE
+    TYPE: String
+    REQUIRED: False
+  - TITLE: ELEMENT_SPECIFIC
+    TYPE: SingleChoice(No, Yes)
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: APPLIES_TO
+    TYPE: String
+    REQUIRED: False
+  - TITLE: ACCEPTANCE_CRITERIA
+    TYPE: String
+    REQUIRED: False
+  - TITLE: CONSEQUENCE
+    TYPE: String
+    REQUIRED: False
+  RELATIONS:
+  - TYPE: Parent
+    ROLE: Implements
+    REVERSE_ROLE: Implemented by

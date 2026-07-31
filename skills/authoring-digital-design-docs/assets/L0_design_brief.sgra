@@ -1,0 +1,250 @@
+[GRAMMAR]
+ELEMENTS:
+- TAG: SECTION
+  PROPERTIES:
+    IS_COMPOSITE: True
+    PREFIX: None
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: False
+  - TITLE: LEVEL
+    TYPE: String
+    REQUIRED: False
+  - TITLE: PREFIX
+    TYPE: String
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+- TAG: TEXT
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: False
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+- TAG: STAKEHOLDER
+  PROPERTIES:
+    PREFIX: SH-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STAKEHOLDER_TYPE
+    TYPE: SingleChoice(Primary-user, Secondary-user, Affected, Approver, Resource-owner, Consulted)
+    REQUIRED: True
+  - TITLE: GROUP_SIZE
+    TYPE: String
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: CHARACTERISTICS
+    TYPE: String
+    REQUIRED: False
+  - TITLE: INFLUENCE
+    TYPE: String
+    REQUIRED: False
+- TAG: RELATED_SOLUTION
+  PROPERTIES:
+    PREFIX: RS-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: SOLUTION_CATEGORY
+    TYPE: SingleChoice(Internal-existing, External-comparable, Direct-competitor, Indirect-competitor)
+    REQUIRED: True
+  - TITLE: PROVIDER
+    TYPE: String
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STRENGTHS
+    TYPE: String
+    REQUIRED: False
+  - TITLE: WEAKNESSES
+    TYPE: String
+    REQUIRED: False
+  - TITLE: LESSONS
+    TYPE: String
+    REQUIRED: False
+- TAG: IMPACT
+  PROPERTIES:
+    PREFIX: IMP-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: IMPACT_TYPE
+    TYPE: SingleChoice(Quantitative, Qualitative, Financial)
+    REQUIRED: True
+  - TITLE: BENEFICIARY
+    TYPE: String
+    REQUIRED: True
+  - TITLE: HORIZON
+    TYPE: SingleChoice(Short-term, Medium-term, Long-term)
+    REQUIRED: True
+  - TITLE: BASELINE
+    TYPE: String
+    REQUIRED: False
+  - TITLE: TARGET
+    TYPE: String
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: MEASURE
+    TYPE: String
+    REQUIRED: False
+- TAG: SOLUTION_OPTION
+  PROPERTIES:
+    PREFIX: SO-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: EFFORT
+    TYPE: SingleChoice(Low, Medium, High)
+    REQUIRED: True
+  - TITLE: ASSESSMENT
+    TYPE: SingleChoice(Carry-forward, Deprioritised, Rejected, TBD)
+    REQUIRED: True
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: ADVANTAGES
+    TYPE: String
+    REQUIRED: False
+  - TITLE: DISADVANTAGES
+    TYPE: String
+    REQUIRED: False
+- TAG: BRIEF_CONSTRAINT
+  PROPERTIES:
+    PREFIX: BRC-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: CONSTRAINT_TYPE
+    TYPE: SingleChoice(Resource, Budget, Timeline, Legal, Technical, Organisational, Operational, Other)
+    REQUIRED: True
+  - TITLE: STATUS
+    TYPE: SingleChoice(Draft, In-Review, Approved, Released, Rejected)
+    REQUIRED: True
+  - TITLE: SOURCE
+    TYPE: String
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: RATIONALE
+    TYPE: String
+    REQUIRED: False
+  - TITLE: BREAKDOWN
+    TYPE: String
+    REQUIRED: False
+- TAG: SUCCESS_CRITERION
+  PROPERTIES:
+    PREFIX: SUC-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: TARGET
+    TYPE: String
+    REQUIRED: True
+  - TITLE: MEASURED_BY
+    TYPE: String
+    REQUIRED: True
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  RELATIONS:
+  - TYPE: Parent
+    ROLE: Measures
+    REVERSE_ROLE: Measured by
+- TAG: RISK
+  PROPERTIES:
+    PREFIX: RSK-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: PROBABILITY
+    TYPE: SingleChoice(Low, Medium, High)
+    REQUIRED: True
+  - TITLE: SEVERITY
+    TYPE: SingleChoice(Low, Medium, High)
+    REQUIRED: True
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: MITIGATION
+    TYPE: String
+    REQUIRED: False
+- TAG: RECOMMENDATION
+  PROPERTIES:
+    PREFIX: REC-
+    VIEW_STYLE: Narrative
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: VERDICT
+    TYPE: SingleChoice(Go, No-Go, Conditional-Go, TBD)
+    REQUIRED: True
+  - TITLE: DECISION_REQUIRED_BY
+    TYPE: String
+    REQUIRED: False
+  - TITLE: DECIDED_BY
+    TYPE: String
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: CONDITIONS
+    TYPE: String
+    REQUIRED: False
+  - TITLE: NEXT_STEPS
+    TYPE: String
+    REQUIRED: False
+  RELATIONS:
+  - TYPE: Parent
+    ROLE: Selects
+    REVERSE_ROLE: Selected by

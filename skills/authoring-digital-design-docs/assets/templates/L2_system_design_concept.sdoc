@@ -1,0 +1,582 @@
+[DOCUMENT]
+TITLE: L2 System Design Concept - TBD
+UID: TBD-L2
+VERSION: 0.1
+DATE: TBD
+CLASSIFICATION: Internal
+OPTIONS:
+  MARKUP: Markdown
+  VIEW_STYLE: Narrative
+METADATA:
+  LEVEL: L2 - System Design Concept
+  AUDIENCE: Digital designers and developers; accessible to non-technical stakeholders
+  PURPOSE: Describe HOW the solution works, as system-level architecture
+  AUTHORS: TBD
+  DOC_STATUS: Draft
+
+[GRAMMAR]
+IMPORT_FROM_FILE: L2_system_design_concept.sgra
+
+[TEXT]
+STATEMENT: >>>
+**Level 2 of 4 - System Design Concept.**
+
+The overall technical architecture: the system's structure, its components and
+their interactions, before diving into detailed element designs. Written for
+designers and developers while remaining accessible to non-technical
+stakeholders.
+
+**Scope boundaries.** L1 provides the business context this document
+implements. L3 gives the detailed specification per software element. Deployment
+architecture, infrastructure specification, integration configuration and
+technical implementation detail belong in a **System Realization Concept** - not
+here. When a description starts naming processor counts or connection pool
+sizes, it has left this level.
+
+**Document evolution.** Created early to establish the architecture. References
+to element designs accumulate as those are written. Goals, quality requirements
+and constraints get refined as implementation detail emerges. Keep the
+architecture diagram current - a stale diagram is worse than none.
+<<<
+
+[[SECTION]]
+UID: L2-SG
+TITLE: System goals
+
+[TEXT]
+STATEMENT: >>>
+What the technical system shall achieve as part of the solution. These detail
+the vision in terms technical people can act on. Focus on the *what* and *why*
+at system level, never the *how* - that is system scenarios and element designs.
+
+**Every system goal should have at least one system scenario demonstrating how
+the system achieves it.** A goal with no scenario is either untested or
+unnecessary.
+<<<
+
+[SYSTEM_GOAL]
+UID: SG-01
+OBLIGATION: shall
+PRIORITY: Must
+STATUS: Draft
+TITLE: TBD
+STATEMENT: >>>
+TBD - What the system should achieve and why it matters, at system level.
+<<<
+SUCCESS_CRITERIA: >>>
+TBD - *Optional.* Measurable or observable criteria indicating the goal is
+achieved.
+
+**Quantitative** where the goal is time-based (speed, duration, response time),
+volume-based (users, transactions, data items), quality-metricated (success
+rate, error rate, uptime) or efficiency-based (steps required, resources used).
+
+**Qualitative** where the goal is a subjective user experience, a binary
+capability ("system can do X"), an integration ("integrates with Y") or a
+completeness claim ("all data types supported").
+<<<
+RATIONALE: >>>
+TBD - *Optional.* Which higher-level vision or value proposition from L1 this
+supports.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: BG-01
+  ROLE: Satisfies
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L2-ARCH
+TITLE: System architecture
+
+[[SECTION]]
+UID: L2-ARCH-OVERVIEW
+TITLE: Architecture overview
+
+[TEXT]
+STATEMENT: >>>
+**Architecture style:** TBD - e.g. client-server, three-tier, microservices,
+event-driven, layered.
+
+TBD - A high-level description of the architecture and the design decisions
+behind it. Name the elements by their IDs as you introduce them, so the prose
+and the diagram agree. Say what the system deliberately does *not* contain.
+<<<
+
+[[SECTION]]
+UID: L2-ARCH-PRINCIPLES
+TITLE: Key architecture principles
+
+[TEXT]
+STATEMENT: >>>
+Three to seven fundamental architectural decisions. These are the choices that
+shape everything below, and the ones most often violated silently later - which
+is why they carry IDs rather than sitting in a bullet list.
+<<<
+
+[ARCHITECTURE_PRINCIPLE]
+UID: AP-01
+STATUS: Draft
+TITLE: TBD
+STATEMENT: >>>
+TBD - One architectural decision, stated so a later design choice can be
+checked against it. For example: separation of concerns between client and
+backend; authentication delegated to the institutional system; payment
+processing outsourced to a certified gateway; data held centrally and cached on
+clients.
+<<<
+RATIONALE: >>>
+TBD - Why this decision, and what the alternative would have cost.
+<<<
+IMPLICATIONS: >>>
+TBD - What this rules out, so a reader knows when they are about to break it.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SG-01
+  ROLE: Satisfies
+
+[[/SECTION]]
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L2-ARCH-DIAGRAM
+TITLE: Architecture diagram
+
+[TEXT]
+STATEMENT: >>>
+The diagram should show every user type, software element, hardware element and
+partner element; the primary interactions and data flows; the system boundary
+between internal and external; and the major groupings or layers.
+
+Mermaid equivalents for the recommended notation:
+
+| Notation | Meaning | Mermaid |
+|---|---|---|
+| Rectangle | Software element | `SE01["SE-01 Name"]` |
+| Cylinder | Database | `SE04[("SE-04 Name")]` |
+| Stick figure | User type | `UT01(["UT-01 Name"])` |
+| Dashed rectangle | Partner element | `PE01["PE-01 Name"]` + dashed link |
+| Cloud / device | Hardware element | `HE01[/"HE-01 Name"/]` |
+| Arrow | Data flow | `-->` |
+| Dashed line | Partner boundary crossing | `-. label .->` |
+| Grouping | Layer or boundary | `subgraph` |
+
+Label every node with its element ID. A diagram whose boxes do not correspond
+to identified elements cannot be checked against the text, and drifts.
+
+```mermaid
+graph TB
+  UT01(["UT-01 TBD"]) --> SE01
+  subgraph client["Client tier"]
+    SE01["SE-01 TBD"]
+  end
+  subgraph app["Application tier"]
+    SE02["SE-02 TBD"]
+    SE04[("SE-04 TBD")]
+  end
+  SE01 --> SE02
+  SE02 --> SE04
+  SE02 -. "TBD" .-> PE01["PE-01 TBD"]
+  SE02 --> HE01[/"HE-01 TBD"/]
+```
+
+Detailed interaction flows belong in system scenarios, not here.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L2-ARCH-USERS
+TITLE: System elements - user types
+
+[USER_TYPE]
+UID: UT-01
+STATUS: Draft
+AUTHORITY: Author
+TITLE: TBD
+STATEMENT: >>>
+TBD - This user type, their role and characteristics. One or two sentences.
+<<<
+PRIMARY_GOALS: >>>
+TBD - Three to five things they want to achieve with the system.
+<<<
+INTERACTS_WITH: >>>
+TBD - Which software elements they use directly: [LINK: SE-01]
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VCA-01
+  ROLE: Represents
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L2-ARCH-SOFTWARE
+TITLE: System elements - software elements
+
+[TEXT]
+STATEMENT: >>>
+Applications, services and systems that are part of this solution and will be
+developed, configured or customised as part of the project.
+<<<
+
+[SOFTWARE_ELEMENT]
+UID: SE-01
+ELEMENT_TYPE: Backend-service
+STATUS: Draft
+TECHNOLOGY: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - What this element is and what it does. Two or three sentences.
+<<<
+KEY_RESPONSIBILITIES: >>>
+TBD - Three to seven main functions. Use action verbs - manages, provides,
+processes, stores, displays. Focus on what it does, not how. Each
+responsibility should be distinct from every other element's.
+
+- TBD
+<<<
+INTERACTS_WITH: >>>
+TBD - Other elements it communicates with, as inline links:
+
+- Software elements: [LINK: SE-02]
+- Hardware elements, where it runs: [LINK: HE-01]
+- Partner elements it calls: [LINK: PE-01]
+- User types who use it directly: [LINK: UT-01]
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VCA-01
+  ROLE: Realises
+
+[SOFTWARE_ELEMENT]
+UID: SE-02
+ELEMENT_TYPE: Web-application
+STATUS: Draft
+TECHNOLOGY: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - A second element, so interactions can be shown.
+<<<
+KEY_RESPONSIBILITIES: >>>
+- TBD
+<<<
+INTERACTS_WITH: >>>
+TBD - [LINK: SE-01]
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VCA-01
+  ROLE: Realises
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L2-ARCH-HARDWARE
+TITLE: System elements - hardware elements
+
+[TEXT]
+STATEMENT: >>>
+The physical devices and infrastructure the software runs on. This is what gives
+the reader a tangible sense of the system's physical presence.
+
+`PROCUREMENT` must always be explicit: `Procurement-required` where something
+must be bought, `Assumed-existing` where users or the institution already have
+it, `Managed-service` where a provider supplies it. An unstated procurement
+position is how hardware costs get discovered late.
+
+Keep technical characteristics high-level - minimum OS versions, connectivity,
+form factor, quantities. Processor and memory specifications belong in the
+System Realization Concept.
+<<<
+
+[HARDWARE_ELEMENT]
+UID: HE-01
+PROCUREMENT: Assumed-existing
+STATUS: Draft
+MANAGED_BY: TBD
+LOCATION: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - What this hardware is, its purpose, and who owns or manages it. Include
+location where the hardware is fixed in place or where location affects the
+design; omit it for portable user devices unless it matters.
+<<<
+RUNS: >>>
+TBD - Which software elements run on this: [LINK: SE-01]
+<<<
+CHARACTERISTICS: >>>
+TBD - Minimum requirements, form factor, quantities. High-level only.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L2-ARCH-PARTNER
+TITLE: System elements - partner elements
+
+[TEXT]
+STATEMENT: >>>
+External systems, services and platforms the solution integrates with but does
+not own or control - payment gateways, authentication systems, cloud services,
+third-party APIs.
+
+Technical integration detail - API specifications, authentication methods, data
+formats, error handling, retry strategy - belongs in the outbound technical
+interface sections of the calling elements' L3 documents, not here.
+<<<
+
+[PARTNER_ELEMENT]
+UID: PE-01
+PROVIDER: TBD
+PARTNER_TYPE: External-SaaS
+DEPENDENCY: Important
+STATUS: Draft
+TITLE: TBD
+STATEMENT: >>>
+TBD - What this partner element is and what capability it provides. Two or
+three sentences.
+
+Set `DEPENDENCY` honestly: `Critical` means the system does not function
+without it.
+<<<
+USED_BY: >>>
+TBD - Which software elements integrate with it: [LINK: SE-01]
+<<<
+
+[[/SECTION]]
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L2-SSC
+TITLE: System scenarios
+
+[TEXT]
+STATEMENT: >>>
+Essential end-to-end flows showing how the system as a whole achieves its
+goals, focused on which elements interact with which. At least one scenario per
+system goal.
+
+**Differentiated depth is intentional, not inconsistency.** A complex
+cross-element flow warrants a detailed step-by-step treatment; a simple path
+through one or two elements needs only a concise narrative. Record which you
+chose in `DETAIL_LEVEL` so a reviewer does not read variation as an oversight.
+
+**Always use element IDs in steps.** "SE-01 sends the order to SE-02", not "the
+app sends the order to the server". Describe what happens, not how it is
+implemented: "SE-02 processes payment via PE-01", not "SE-02 calls TF-15 which
+validates fields and calls TO-04". Keep data references light - "sends order
+(meals, pickup time)" is the upper bound of useful detail here.
+<<<
+
+[[SYSTEM_SCENARIO]]
+UID: SSc-01
+STATUS: Draft
+PRIORITY: Must
+DETAIL_LEVEL: Detailed
+TITLE: TBD
+STATEMENT: >>>
+TBD - The end-to-end flow, and which system goal it demonstrates.
+<<<
+ACTORS: >>>
+TBD - User types and any partner elements playing an active role:
+[LINK: UT-01], [LINK: PE-01]
+<<<
+ELEMENTS_INVOLVED: >>>
+TBD - [LINK: SE-01], [LINK: SE-02]
+<<<
+PRECONDITION: >>>
+TBD
+<<<
+POSTCONDITION: >>>
+TBD
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SG-01
+  ROLE: Achieves
+- TYPE: Parent
+  VALUE: BP-01
+  ROLE: Realises
+
+[SCENARIO_STEP]
+UID: SSt-01-1
+PERFORMED_BY: TBD
+STATEMENT: >>>
+TBD - Which element performs the action and what it does. Order is document
+order; never number in the text.
+<<<
+AFFECTS: >>>
+TBD - Which other elements are affected: [LINK: SE-02]
+<<<
+
+[SCENARIO_STEP]
+UID: SSt-01-2
+PERFORMED_BY: TBD
+STATEMENT: >>>
+TBD
+<<<
+
+[SCENARIO_ALTERNATIVE]
+UID: SA-01-1
+OUTCOME: Terminate
+TITLE: TBD
+STATEMENT: >>>
+TBD - A significant alternative path: an error affecting the overall flow, an
+alternative user choice leading to different element interactions, or a partner
+element failure.
+
+Keep it high-level. Detailed error handling belongs at L3. The Extends relation
+names the step this branches from.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SSt-01-2
+  ROLE: Extends
+
+[[/SYSTEM_SCENARIO]]
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L2-SQR
+TITLE: Quality requirements
+
+[TEXT]
+STATEMENT: >>>
+How well the *entire system* performs - not individual elements, which is L3.
+This is where a business quality requirement from L1 becomes a number.
+
+Set `EXTERNALLY_SOURCED: Yes` where the requirement comes from a regulation,
+standard or platform rather than from a business quality requirement. Such
+requirements legitimately have no L1 parent, and marking them distinguishes
+them from ones where the link was simply forgotten.
+<<<
+
+[SYSTEM_QUALITY_REQUIREMENT]
+UID: SQR-01
+QUALITY_CATEGORY: Performance
+OBLIGATION: shall
+PRIORITY: Must
+STATUS: Draft
+VERIFICATION: Test
+EXTERNALLY_SOURCED: No
+TITLE: TBD
+STATEMENT: >>>
+TBD - What aspect of system-wide quality is specified and why it matters.
+
+Categories: `Performance` response times, throughput, resource usage;
+`Scalability` handling growing workload; `Availability` uptime, reliability,
+fault tolerance; `Security` authentication, authorisation, data protection;
+`Usability` ease of use, learnability, accessibility; `Maintainability`
+system-wide code quality, documentation, testability; `Compatibility` platform,
+browser and integration support; `Data-integrity` consistency, accuracy,
+validation; `Compliance` regulatory and standards adherence.
+<<<
+APPLIES_TO: >>>
+TBD - The elements this primarily affects: [LINK: SE-01], [LINK: HE-01],
+[LINK: PE-01], [LINK: UT-01], or the overall system architecture.
+<<<
+ACCEPTANCE_CRITERIA: >>>
+TBD - Clear, testable, unambiguous.
+
+**Quantitative** where performance, availability, scalability, security,
+numerical standards or resource usage can be measured:
+- "End-to-end completion within 30 seconds for 95% of requests"
+- "Supports 1000 concurrent users without degradation"
+- "99.5% uptime during operating hours"
+- "All network communication uses TLS 1.2 or higher"
+
+**Qualitative** where assessment is subjective, compliance is binary, or a
+practice is required:
+- "All interfaces follow platform-specific design guidelines"
+- "System degrades gracefully when partner services are unavailable"
+- "All sensitive data encrypted at rest and in transit"
+<<<
+RATIONALE: >>>
+TBD - *Optional.*
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: BQR-01
+  ROLE: Supports
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L2-SC
+TITLE: Constraints
+
+[TEXT]
+STATEMENT: >>>
+Non-negotiable requirements limiting design and implementation choices for the
+system as a whole, arriving from outside - laws, regulations, standards,
+existing infrastructure, business decisions.
+
+Many system constraints come from external sources and have no corresponding
+business constraint. That is normal and expected; mark them
+`EXTERNALLY_SOURCED: Yes` rather than inventing a business parent.
+<<<
+
+[SYSTEM_CONSTRAINT]
+UID: SC-01
+CONSTRAINT_CATEGORY: Technical
+STATUS: Draft
+SOURCE: TBD
+EXTERNALLY_SOURCED: No
+TITLE: TBD
+STATEMENT: >>>
+TBD - What the constraint requires or restricts, why it exists, and where it
+comes from.
+
+Categories: `Legal-regulatory` laws, regulations, compliance;
+`Technical` technology choices, platform limits, existing infrastructure;
+`Business` budget, timeline, organisational policy;
+`Integration` requirements from partner or institutional systems;
+`Standards` industry or company standards that must be followed.
+<<<
+APPLIES_TO: >>>
+TBD - Which elements are affected: [LINK: SE-01], [LINK: HE-01],
+[LINK: PE-01], or the overall system architecture.
+<<<
+ACCEPTANCE_CRITERIA: >>>
+TBD - What must be done to satisfy the constraint.
+
+**Quantitative** where there are versions, limits, dates or amounts:
+- "All user-facing applications support iOS 14+ and Android 8+"
+- "Personal data retention limited to 24 months"
+
+**Qualitative** where compliance is binary or a technology is mandated:
+- "All personal data handling complies with GDPR Articles 5-11"
+- "Uses institutional SAML 2.0 authentication exclusively"
+<<<
+RATIONALE: >>>
+TBD - *Optional.*
+<<<
+CONSEQUENCE: >>>
+TBD - What this rules out. A constraint whose consequence is unstated tends to
+get ignored.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: BC-01
+  ROLE: Refines
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L2-APPENDIX
+TITLE: Appendix
+
+[TEXT]
+STATEMENT: >>>
+*Optional section.* Extended design rationale, records of discarded
+alternatives, results from technical spikes or prototypes, input from domain
+experts or external review.
+<<<
+
+[[/SECTION]]

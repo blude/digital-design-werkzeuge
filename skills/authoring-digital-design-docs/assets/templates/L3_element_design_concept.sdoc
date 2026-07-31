@@ -1,0 +1,674 @@
+[DOCUMENT]
+TITLE: L3 Element Design Concept - TBD element
+UID: TBD-L3-TBD
+VERSION: 0.1
+DATE: TBD
+CLASSIFICATION: Internal
+OPTIONS:
+  MARKUP: Markdown
+  VIEW_STYLE: Narrative
+METADATA:
+  LEVEL: L3 - Element Design Concept
+  ELEMENT: TBD - the L2 software element ID this document designs
+  ELEMENT_PROFILE: TBD - User-facing-frontend | Backend-service | Integration-middleware | Hardware-bound
+  AUDIENCE: Digital designers and developers implementing this element
+  AUTHORS: TBD
+  DOC_STATUS: Draft
+
+[GRAMMAR]
+IMPORT_FROM_FILE: L3_element_design_concept.sgra
+
+[TEXT]
+STATEMENT: >>>
+**Level 3 of 4 - Element Design Concept.**
+
+The non-technical design of **one element**, described in enough detail to
+implement it. An element can be a smartphone app, a web app, a server element,
+or a whole complicated system. This document covers `TBD`, declared at L2.
+
+One L3 document per element. Record the L2 element ID in `METADATA`.
+<<<
+
+[[SECTION]]
+UID: L3-APPLICABILITY
+TITLE: Which sections apply to this element
+
+[TEXT]
+STATEMENT: >>>
+Not all sections apply to every element type. Set `ELEMENT_PROFILE` in the
+document metadata, then state below which sections apply here and why - so a
+reader can tell an omission was a decision.
+
+**User-facing frontend** (web app, mobile app, kiosk)
+All sections apply. User interfaces and use cases are the core. Technical
+interfaces describe inbound calls from users and outbound calls to backend
+services. Technical functions cover rendering logic, validation and local state
+management.
+
+**Backend service / API** (application server, microservice)
+Goals, use cases, both technical interface sections, technical functions and
+entities are the core. User interfaces typically do not apply. Quality
+requirements and constraints are particularly important.
+
+**Integration / middleware** (adapter, message broker, API gateway)
+Technical interfaces inbound and outbound are the core. Use cases may be limited
+or absent. Focus on data transformation, routing logic in technical functions,
+and error handling. Entities describe the structures being passed through.
+
+**Hardware-bound element** (embedded device, display terminal, sensor gateway)
+Goals and constraints are central. Technical interfaces describe physical
+protocols and data formats. Use cases cover operational modes and interactions.
+User interfaces apply only if the device has a local UI. Technical functions
+cover device-specific logic - firmware triggers, signal processing.
+
+**When in doubt**, start with goals and use cases to establish what the element
+must achieve, then add only the sections where there is meaningful content. An
+empty section is less useful than a focused, well-populated set.
+
+| Section | Applies | Note |
+|---|---|---|
+| Goals (`G-`) | TBD | |
+| Use cases (`UC-`) | TBD | |
+| User interfaces (`UI-`) | TBD | |
+| Technical functions (`TF-`) | TBD | |
+| Technical interfaces inbound (`TI-`) | TBD | |
+| Technical interfaces outbound (`TO-`) | TBD | |
+| Entities (`E-`) | TBD | |
+| Quality requirements (`QR-`) | TBD | |
+| Constraints (`C-`) | TBD | |
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L3-G
+TITLE: Goals
+
+[TEXT]
+STATEMENT: >>>
+What the element shall achieve. Goals provide the rationale for the element's
+existence and guide design decisions. Use cases and technical functions
+reference them to show how they contribute.
+<<<
+
+[GOAL]
+UID: G-01
+OBLIGATION: shall
+PRIORITY: Must
+STATUS: Draft
+TITLE: TBD
+STATEMENT: >>>
+TBD - What the element should achieve and why it matters.
+<<<
+SUCCESS_CRITERIA: >>>
+TBD - *Optional.* Measurable criteria indicating the goal is achieved. For
+example: "users complete the task within three taps"; "requests processed
+within 10 seconds"; "95% of users complete checkout on first attempt".
+<<<
+RATIONALE: >>>
+TBD - *Optional.* Which system goal from L2 this supports.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SG-01
+  ROLE: Satisfies
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L3-UC
+TITLE: Use cases
+
+[TEXT]
+STATEMENT: >>>
+A use case is a functionality the element provides to a user. Exactly one main
+scenario plus any number of alternative scenarios.
+
+**Every step is one of four kinds**, recorded in `STEP_TYPE`:
+
+| `STEP_TYPE` | What it is | Must name |
+|---|---|---|
+| `User-interaction` | User interacts with a user interface | the `UI-` and the data entered or shown |
+| `Function-call` | Invokes internal logic | the `TF-`, its input, and what happens to its output |
+| `Outbound-call` | Technical interaction with another element | the `TO-` — but see below |
+| `Activity` | Internal processing by the element | nothing external |
+
+**Prefer function calls over outbound calls.** Most logic, including calls to
+external interfaces, should be encapsulated in a technical function. A direct
+`Outbound-call` step is justified only where creating a function would be
+unnecessary overhead, which is rare. When unsure, use a function call - it reads
+better and keeps error handling in one place.
+
+**Where a called function fails, the error is handled in that function's
+specification**, not here. Alternative scenarios at this level cover failures
+the *use case* must respond to.
+<<<
+
+[[USE_CASE]]
+UID: UC-01
+STATUS: Draft
+PRIORITY: Must
+TITLE: TBD
+STATEMENT: >>>
+TBD - What this use case provides, and which goal it achieves.
+<<<
+ACTORS: >>>
+TBD - **An actor must be an element of the system architecture from L2.**
+Reference by ID: [LINK: UT-01], [LINK: PE-01]
+<<<
+PREREQUISITES: >>>
+TBD - Events or other use cases that must have occurred. Where another use case
+is a prerequisite, name it and give its ID.
+<<<
+POSTCONDITION: >>>
+TBD
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: G-01
+  ROLE: Achieves
+- TYPE: Parent
+  VALUE: SSc-01
+  ROLE: Realises
+
+[STEP]
+UID: ST-01-1
+STEP_TYPE: User-interaction
+STATEMENT: >>>
+TBD - Name the user interface and describe what the user enters or is shown.
+For example: "The user enters their credentials in UI-01."
+<<<
+REFERENCES: >>>
+TBD - [LINK: UI-01]
+<<<
+DATA: >>>
+TBD - What is entered or displayed.
+<<<
+
+[STEP]
+UID: ST-01-2
+STEP_TYPE: Function-call
+STATEMENT: >>>
+TBD - Name the technical function, its input, and what is done with its output.
+For example: "Call TF-01 with the credentials. Store the returned token."
+<<<
+REFERENCES: >>>
+TBD - [LINK: TF-01]
+<<<
+
+[STEP]
+UID: ST-01-3
+STEP_TYPE: Activity
+STATEMENT: >>>
+TBD - Internal processing. For example: "Calculate the total from the selected
+items."
+<<<
+
+[EXTENSION]
+UID: EX-01-1
+OUTCOME: Terminate
+TITLE: TBD
+STATEMENT: >>>
+TBD - What happens when the anchored step fails or the user chooses
+differently. The Extends relation names the step, which replaces the "3a"
+lettering convention with a checked reference.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: ST-01-2
+  ROLE: Extends
+
+[[/USE_CASE]]
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L3-UI
+TITLE: User interfaces
+
+[TEXT]
+STATEMENT: >>>
+A user interface gives a user access to the element's functionality. The focus
+is on what is **visible**, what data is displayed, and what actions are
+available - not on the implementation of those actions.
+
+**Detailed behaviour belongs elsewhere.** Which functions are called, how data
+is processed, how errors are handled, what happens next - all of that is in the
+referenced use cases and technical functions, not here.
+
+**Reference a use case** for user-facing multi-step actions with feedback.
+**Reference a technical function** for instant data operations.
+<<<
+
+[USER_INTERFACE]
+UID: UI-01
+STATUS: Draft
+USER_TYPE: TBD - name the L2 user type that may use this
+TITLE: TBD
+STATEMENT: >>>
+TBD - What this interface is for.
+<<<
+VISIBLE_DATA: >>>
+TBD - For each piece of data shown:
+
+- **attributeName** (dataType): what is displayed
+  Source: [LINK: E-01] attribute `E-01.1`, or [LINK: TF-01]
+  Conditions: when it is visible, or how it changes with state
+<<<
+ACTIONS: >>>
+TBD - For each available action:
+
+- **Action name**: what it represents - button press, link, selection
+  Related use case: [LINK: UC-01]
+  Or, for a simple instant operation, related function: [LINK: TF-01]
+  Conditions: when it is available, e.g. "enabled only when fields are filled"
+<<<
+INPUT_FIELDS: >>>
+TBD - *If applicable.* For each field where the user enters data:
+
+- **fieldName** (dataType): what the user enters
+  Validation: UI-level only - required, format, length
+  Related use case: [LINK: UC-01]
+<<<
+NAVIGATION: >>>
+TBD - *If applicable.* For each navigation target:
+
+- Target: [LINK: UI-01] - when navigation occurs
+  Related use case describing the flow: [LINK: UC-01]
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: UC-01
+  ROLE: Realises
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L3-TF
+TITLE: Technical functions
+
+[TEXT]
+STATEMENT: >>>
+A technical function is internal functionality the element performs. The
+description must explain **how the output is created**.
+
+**Every step is one of four kinds**, recorded in `STEP_TYPE`:
+
+| `STEP_TYPE` | What it is | Must name |
+|---|---|---|
+| `Data-operation` | Manipulates known data | data from input, an entity, or another call |
+| `Entity-access` | Reads or writes stored data | the `E-` and the specific attributes, e.g. `E-02.3` |
+| `Function-call` | Invokes another function | the `TF-`, its input, what happens to its output |
+| `Outbound-call` | Calls an external element | the `TO-`, input, expected output, **and call behaviour** |
+
+**An outbound call must specify call behaviour** in `CALL_BEHAVIOUR`: timeout
+for synchronous calls or callback handling for asynchronous ones, retry logic
+(attempts, delays, which errors trigger a retry), error handling per error case
+from the outbound interface specification, and anything else relevant - caching,
+rate limiting, correlation. Create an alternative flow for each error case
+needing different handling; grouping similar handling is fine.
+
+**Referencing a goal is optional and should be deliberate.** Reference one where
+the function is central to fulfilling it, implements important business logic,
+or is a critical performance factor for it. Do *not* reference one where the
+function is a utility (sort, filter, format), where it is only called by use
+cases that already reference the goal, or where it is purely technical with no
+direct business relevance.
+
+`DETAIL_LEVEL` records whether the flow is elaborated into step nodes
+(`Stepwise`) or described in prose (`Narrative`). A utility function rarely
+warrants steps.
+<<<
+
+[[TECHNICAL_FUNCTION]]
+UID: TF-01
+OBLIGATION: shall
+PRIORITY: Must
+STATUS: Draft
+VERIFICATION: Test
+DETAIL_LEVEL: Stepwise
+DERIVED: No
+TITLE: TBD
+STATEMENT: >>>
+TBD - What this function does. Steps go in child nodes below.
+<<<
+INPUT: >>>
+TBD - For each parameter:
+- **parameterName** (dataType): description
+<<<
+OUTPUT: >>>
+TBD - For each output:
+- **outputName** (dataType): description
+<<<
+ACCEPTANCE_CRITERIA: >>>
+TBD
+<<<
+RATIONALE: >>>
+TBD - *Required when `DERIVED: Yes`* - what implementation decision this
+follows from, since it then has no goal to trace to.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: G-01
+  ROLE: Achieves
+
+[FUNCTION_STEP]
+UID: FS-01-1
+STEP_TYPE: Entity-access
+STATEMENT: >>>
+TBD - For example: "Read the stored value from E-01 attribute E-01.1."
+<<<
+REFERENCES: >>>
+TBD - [LINK: E-01]
+<<<
+
+[FUNCTION_STEP]
+UID: FS-01-2
+STEP_TYPE: Outbound-call
+STATEMENT: >>>
+TBD - Name the outbound interface, the input provided, and the expected output.
+<<<
+REFERENCES: >>>
+TBD - [LINK: TO-01]
+<<<
+CALL_BEHAVIOUR: >>>
+TBD - Timeout: TBD. Retry: TBD attempts, TBD delay, triggered by TBD.
+Error handling: TBD per error case. Other: caching, rate limiting, correlation.
+<<<
+
+[FUNCTION_STEP]
+UID: FS-01-3
+STEP_TYPE: Data-operation
+STATEMENT: >>>
+TBD - For example: "Compute total as the sum of the returned values." This is
+where the output gets created; the flow must make that explicit.
+<<<
+
+[FUNCTION_ALTERNATIVE]
+UID: FA-01-1
+OUTCOME: Terminate
+TITLE: TBD
+STATEMENT: >>>
+TBD - One alternative flow per error case from the outbound interface that needs
+different handling. The Extends relation names the step it branches from.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: FS-01-2
+  ROLE: Extends
+
+[[/TECHNICAL_FUNCTION]]
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L3-TI
+TITLE: Technical interfaces (inbound)
+
+[TEXT]
+STATEMENT: >>>
+Interfaces this element **provides** so other elements can access its data or
+functionality.
+<<<
+
+[TECHNICAL_INTERFACE_IN]
+UID: TI-01
+CALL_TYPE: Synchronous
+STATUS: Draft
+PROTOCOL: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - What this interface is for.
+<<<
+CALLING_ELEMENTS: >>>
+TBD - Elements that may call this, with their outbound interface where
+documented: "[Element name] ([LINK: SE-01], TO-nn)"
+<<<
+INPUT: >>>
+TBD - For each parameter:
+- **parameterName** (dataType, required/optional): description
+<<<
+OUTPUT: >>>
+TBD - For each output value:
+- **outputName** (dataType): description, and the conditions under which it is
+  returned
+<<<
+ACTION: >>>
+TBD - What the interface does, at a high level.
+
+*Simple interface:* reference the function implementing it - "Calls
+[LINK: TF-01] with the provided input and returns the result."
+
+*Complex interface, or no single function:* which entities are accessed, the
+major processing steps, what determines the output, and the relevant functions
+for key steps.
+
+*Avoid* specific attribute IDs, exact algorithms and detailed conditional logic
+- those belong in technical functions.
+
+*Synchronous:* state that the response returns immediately after processing, and
+the expected response time if relevant.
+
+*Asynchronous:* what happens immediately on receipt (validation, queueing,
+acknowledgement time), the background processing and which function performs it,
+how the result reaches the caller (callback URL, notification interface), and
+the expected processing time range.
+<<<
+ERROR_CASES: >>>
+TBD - For each:
+- **errorCode / type**: when it occurs
+
+Separate immediate errors (validation, authentication) from processing errors,
+which an asynchronous interface may report via callback.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L3-TO
+TITLE: Technical interfaces (outbound)
+
+[TEXT]
+STATEMENT: >>>
+Interfaces this element **uses** to reach partner elements in the system
+context.
+
+**Call behaviour is not specified here.** Timeouts, retry logic and error
+handling live in the technical functions that make the calls - see
+`CALL_BEHAVIOUR` on the calling step.
+<<<
+
+[TECHNICAL_INTERFACE_OUT]
+UID: TO-01
+CALL_TYPE: Synchronous
+STATUS: Draft
+PROTOCOL: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - Follow the form: "This interface [what it does] by calling [partner
+element] ([LINK: PE-01]). Used for [purpose in this element]."
+
+Name the interface for what *this* element does with it, not for what the
+partner offers.
+<<<
+INPUT: >>>
+TBD - Every parameter this element must provide:
+- **parameterName** (dataType, required/optional): description
+<<<
+OUTPUT: >>>
+TBD - Every value this element receives:
+- **outputName** (dataType): description
+<<<
+ERROR_CASES: >>>
+TBD - Every error this element must be prepared to handle:
+- **errorCode / type**: what it means
+<<<
+AUTHORITATIVE_SPEC: >>>
+TBD - Where the complete specification lives: the provider element's Element
+Design Concept and its inbound interface ID. This document holds the consumer's
+view only.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: PE-01
+  ROLE: Calls
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L3-E
+TITLE: Entities
+
+[TEXT]
+STATEMENT: >>>
+The entities this element **stores**. For complex data structures, include a
+diagram.
+
+```mermaid
+erDiagram
+  ENTITY_A ||--o{ ENTITY_B : "TBD"
+```
+<<<
+
+[ENTITY]
+UID: E-01
+STATUS: Draft
+PERSISTENCE: Persistent
+TITLE: TBD
+STATEMENT: >>>
+TBD - What this entity represents and what it stores, and its purpose within
+this element. One or two sentences.
+<<<
+ATTRIBUTES: >>>
+| ID | Attribute | Type | Required | Description |
+|---|---|---|---|---|
+| E-01.1 | TBD | TBD | required | TBD |
+| E-01.2 | TBD | TBD | optional | TBD |
+
+**Naming:** camelCase - `userId`, `createdAt`, `orderTotal`.
+
+**Types:** be specific. Primitives `string` `integer` `decimal` `boolean`
+`datetime` `date` `time`; collections `array` `object`; special `enum` `uuid`
+`url` `email` `phoneNumber`; references to another entity by its ID.
+
+**Required vs optional:** `required` cannot be null or empty; `optional` can.
+
+**Descriptions:** what it stores, any constraints (min/max length, range,
+format), references to other entities, and whether the value is derived.
+
+The `E-01.1` attribute IDs are referenced from technical function steps. They
+are table content rather than node identifiers, so they are not link-checked -
+keep them consistent by hand.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: BE-01
+  ROLE: Refines
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L3-QR
+TITLE: Quality requirements
+
+[TEXT]
+STATEMENT: >>>
+How well the element performs its functions. Set `ELEMENT_SPECIFIC: Yes` where
+the requirement is a purely element-level technical goal with no system-level
+counterpart - the template notes this is legitimate.
+<<<
+
+[QUALITY_REQUIREMENT]
+UID: QR-01
+QUALITY_CATEGORY: Performance
+OBLIGATION: shall
+PRIORITY: Must
+STATUS: Draft
+VERIFICATION: Test
+ELEMENT_SPECIFIC: No
+TITLE: TBD
+STATEMENT: >>>
+TBD - What aspect of quality is specified and why it matters.
+
+Categories: `Performance` response times, throughput, resource usage;
+`Scalability` handling growing workload; `Availability` uptime, reliability,
+fault tolerance; `Security` authentication, authorisation, data protection;
+`Usability` ease of use, learnability, accessibility; `Maintainability` code
+quality, documentation, testability; `Compatibility` platform, browser,
+integration support; `Data-integrity` consistency, accuracy, validation;
+`Compliance` regulatory and standards adherence.
+<<<
+APPLIES_TO: >>>
+TBD - *Optional.* The parts of this element design affected: [LINK: UI-01],
+[LINK: UC-01], [LINK: TF-01], [LINK: TI-01], [LINK: TO-01], [LINK: E-01], or
+the overall architecture.
+<<<
+ACCEPTANCE_CRITERIA: >>>
+TBD - Quantitative where performance, availability, scalability, security or
+numerical standards can be measured; qualitative where assessment is subjective,
+compliance is binary, or a practice is required.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SQR-01
+  ROLE: Supports
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L3-C
+TITLE: Constraints
+
+[TEXT]
+STATEMENT: >>>
+Non-negotiable requirements limiting design and implementation choices for this
+element. Set `ELEMENT_SPECIFIC: Yes` for purely technical constraints -
+implementation choices, library versions - which the template notes need not
+relate to a system constraint.
+<<<
+
+[CONSTRAINT]
+UID: C-01
+CONSTRAINT_CATEGORY: Technical
+STATUS: Draft
+SOURCE: TBD
+ELEMENT_SPECIFIC: No
+TITLE: TBD
+STATEMENT: >>>
+TBD - What the constraint requires or restricts, and why it exists.
+
+Categories: `Legal-regulatory`, `Technical`, `Business`, `Integration`,
+`Standards`.
+<<<
+APPLIES_TO: >>>
+TBD - The parts of this element design affected: [LINK: UI-01], [LINK: UC-01],
+[LINK: TF-01], [LINK: TI-01], [LINK: TO-01], [LINK: E-01], or the overall
+architecture.
+<<<
+ACCEPTANCE_CRITERIA: >>>
+TBD - What demonstrates compliance. Quantitative where there are versions,
+limits, dates or amounts; qualitative where compliance is binary or a technology
+is mandated.
+<<<
+CONSEQUENCE: >>>
+TBD - What this rules out for the implementer.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SC-01
+  ROLE: Implements
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L3-APPENDIX
+TITLE: Appendix
+
+[TEXT]
+STATEMENT: >>>
+*Optional section.* Extended design rationale, records of discarded
+alternatives, results from technical spikes or prototypes, input from domain
+experts or external review.
+<<<
+
+[[/SECTION]]

@@ -1,0 +1,600 @@
+[DOCUMENT]
+TITLE: L0 Digital Design Brief - TBD
+UID: TBD-L0
+VERSION: 1.0
+DATE: TBD
+CLASSIFICATION: Internal
+PREFIX: DB-
+ROOT: True
+OPTIONS:
+  MARKUP: Markdown
+  VIEW_STYLE: Narrative
+METADATA:
+  LEVEL: L0 - Digital Design Brief
+  AUDIENCE: Management, executives, decision-makers
+  PURPOSE: Enable an informed Go/No-Go decision on proceeding to solution design
+  AUTHORS: TBD
+  REVIEWERS: TBD
+  APPROVERS: TBD
+  DOC_STATUS: Draft
+  NEXT_REVIEW: TBD
+
+[GRAMMAR]
+IMPORT_FROM_FILE: L0_design_brief.sgra
+
+[TEXT]
+STATEMENT: >>>
+**Level 0 of 4 - Digital Design Brief.**
+
+A concise, high-level summary of a planned initiative, written so management can
+reach a Go/No-Go decision without technical detail.
+
+**Keep it short.** Two to three pages for a small solution, more only as size
+and complexity demand. A reader should get through it in 15-20 minutes. If a
+section is running long, the detail belongs at L1 or below.
+
+The Go/No-Go here is about **whether to proceed to solution design** - not about
+which option to build. Present the options; let the next phase choose.
+
+This document is marked `ROOT: True`, so its nodes are exempt from the "not
+connected to any parent" statistic. Everything at L1 and below traces up to it.
+<<<
+
+[[SECTION]]
+UID: L0-CONTEXT
+TITLE: Context of the initiative
+
+[[SECTION]]
+UID: L0-CTX-CURRENT
+TITLE: Current situation
+
+[TEXT]
+STATEMENT: >>>
+TBD - The starting point and the problem or opportunity that motivates this.
+
+- What exists today?
+- What problem are we solving, or what opportunity are we capturing?
+- What is the business impact of not acting?
+
+Quantify where possible. "62% satisfaction, 20-30 minute waits at peak" carries
+more weight with this audience than "students are dissatisfied".
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-CTX-MOTIVATION
+TITLE: Motivation for change
+
+[TEXT]
+STATEMENT: >>>
+TBD - Why act now.
+
+- What has changed?
+- What triggers this - regulation, market shift, technology opportunity?
+- What are the consequences of inaction?
+
+This section answers "why not next year", which is usually the first question
+from this audience.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-CTX-USERS
+TITLE: Potential customers and users
+
+[STAKEHOLDER]
+UID: SH-01
+STAKEHOLDER_TYPE: Primary-user
+GROUP_SIZE: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - Who they are and what they would use the solution for.
+<<<
+CHARACTERISTICS: >>>
+- TBD - what matters about this group for design purposes
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-CTX-STAKEHOLDERS
+TITLE: Key stakeholders
+
+[STAKEHOLDER]
+UID: SH-02
+STAKEHOLDER_TYPE: Approver
+GROUP_SIZE: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - Who else is affected or involved, and in what capacity. Use
+STAKEHOLDER_TYPE Approver for veto or sign-off authority, Resource-owner for
+budget or capacity holders, Consulted where input is needed, Affected where the
+change lands on them without their asking.
+<<<
+INFLUENCE: >>>
+TBD - what they control, and what they can block.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-CTX-RELATED
+TITLE: Related solutions
+
+[RELATED_SOLUTION]
+UID: RS-01
+SOLUTION_CATEGORY: Internal-existing
+PROVIDER: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - What already exists that addresses part of this problem, internally or in
+the market.
+<<<
+STRENGTHS: >>>
+- TBD
+<<<
+WEAKNESSES: >>>
+- TBD
+<<<
+LESSONS: >>>
+TBD - what this tells us. A related solution recorded without a lesson is
+trivia.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-CTX-COMPETITIVE
+TITLE: Competitive landscape
+
+[RELATED_SOLUTION]
+UID: RS-02
+SOLUTION_CATEGORY: Direct-competitor
+PROVIDER: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - What users would choose instead, and why they might. Include the
+do-nothing alternative where it is real - people skipping the service
+altogether is often the strongest competitor.
+<<<
+STRENGTHS: >>>
+- TBD - from the user's point of view, not ours
+<<<
+WEAKNESSES: >>>
+- TBD
+<<<
+
+[[/SECTION]]
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-VISION
+TITLE: Vision
+
+[[SECTION]]
+UID: L0-VISION-FUTURE
+TITLE: Future state description
+
+[TEXT]
+STATEMENT: >>>
+TBD - The desired future state, written as observable experience rather than as
+a feature list.
+
+- What will be different?
+- How do users' lives improve?
+- What becomes possible that is not possible today?
+
+Write it in the present tense, as though describing a working system to someone
+watching it.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-VISION-IMPACT
+TITLE: Expected impact
+
+[TEXT]
+STATEMENT: >>>
+Quantify where possible. Use IMPACT_TYPE to separate the three kinds this
+audience reads differently: `Quantitative` for measurable operational change,
+`Qualitative` for real effects that resist measurement, `Financial` for money.
+Set BASELINE and TARGET wherever a number exists - a target without a baseline
+cannot be evaluated later.
+<<<
+
+[IMPACT]
+UID: IMP-01
+IMPACT_TYPE: Quantitative
+BENEFICIARY: TBD
+HORIZON: Short-term
+BASELINE: TBD
+TARGET: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - One expected benefit, stated so its presence or absence is observable.
+<<<
+MEASURE: >>>
+TBD - how this would be observed.
+<<<
+
+[IMPACT]
+UID: IMP-02
+IMPACT_TYPE: Financial
+BENEFICIARY: TBD
+HORIZON: Medium-term
+BASELINE: TBD
+TARGET: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - Revenue, saving, or avoided cost. State the expected payback period if
+one has been estimated.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-VISION-ALIGN
+TITLE: Strategic alignment
+
+[TEXT]
+STATEMENT: >>>
+*Optional section.* TBD - How this fits existing strategy, by naming the
+specific strategic pillar, objective or value. Delete the section rather than
+padding it if no strategy document exists to point at.
+<<<
+
+[[/SECTION]]
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-SOLUTION-SPACE
+TITLE: Solution space
+
+[TEXT]
+STATEMENT: >>>
+This section explores what is possible without deciding. Keep options open -
+prioritisation and selection happen at L1 and L2.
+<<<
+
+[[SECTION]]
+UID: L0-SS-OPTIONS
+TITLE: Solution approach options
+
+[SOLUTION_OPTION]
+UID: SO-01
+EFFORT: Medium
+ASSESSMENT: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - One approach, described so it can be compared against the others on the
+same terms.
+<<<
+ADVANTAGES: >>>
+- TBD
+<<<
+DISADVANTAGES: >>>
+- TBD
+<<<
+
+[SOLUTION_OPTION]
+UID: SO-02
+EFFORT: High
+ASSESSMENT: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - A second approach. Two options is the minimum for this section to mean
+anything; a single option is a decision presented as an analysis.
+<<<
+ADVANTAGES: >>>
+- TBD
+<<<
+DISADVANTAGES: >>>
+- TBD
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-SS-FUNCTIONALITY
+TITLE: Potential functionality
+
+[TEXT]
+STATEMENT: >>>
+TBD - Capabilities under consideration. Group them so the reader can see the
+shape of the scope:
+
+**Core functions**
+- TBD
+
+**Possible extended functions**
+- TBD
+
+**Integration possibilities**
+- TBD
+
+These are candidates, not commitments. They become `BG-` and `VCA-` items at L1.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-SS-TECH
+TITLE: Potential technologies
+
+[TEXT]
+STATEMENT: >>>
+TBD - Technology options, grouped by the decision they belong to, with the
+trade-off named. Note existing infrastructure that creates a preference.
+
+**TBD decision area**
+- TBD option (trade-off: TBD)
+
+Keep options open. Selection happens at L2.
+<<<
+
+[[/SECTION]]
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-CONSTRAINTS
+TITLE: Constraints
+
+[TEXT]
+STATEMENT: >>>
+The four subsections below are the framework's constraint categories. Use
+CONSTRAINT_TYPE `Resource`, `Budget` or `Timeline` for the first three; for the
+fourth, use the more specific `Legal`, `Technical`, `Organisational` or
+`Operational` rather than `Other` where one fits.
+
+Use BREAKDOWN for the detail this audience expects: cost components and funding
+sources on a budget constraint, team and capacity on a resource constraint,
+critical dates on a timeline constraint.
+<<<
+
+[[SECTION]]
+UID: L0-CON-RESOURCE
+TITLE: Resource constraints
+
+[BRIEF_CONSTRAINT]
+UID: BRC-01
+CONSTRAINT_TYPE: Resource
+STATUS: Draft
+SOURCE: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - Teams, skills and capacity available.
+<<<
+BREAKDOWN: >>>
+**Available internally**
+- TBD - role, and capacity as a percentage
+
+**Skills available**
+- TBD
+
+**Skills needed externally**
+- TBD
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-CON-BUDGET
+TITLE: Budget constraints
+
+[BRIEF_CONSTRAINT]
+UID: BRC-02
+CONSTRAINT_TYPE: Budget
+STATUS: Draft
+SOURCE: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - Budget available or estimated range.
+<<<
+BREAKDOWN: >>>
+**Cost components**
+- TBD
+
+**Funding sources**
+- TBD - amount, and whether approved or merely available
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-CON-TIMELINE
+TITLE: Timeline constraints
+
+[BRIEF_CONSTRAINT]
+UID: BRC-03
+CONSTRAINT_TYPE: Timeline
+STATUS: Draft
+SOURCE: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - When this is needed, and whether the date is hard or negotiable.
+<<<
+BREAKDOWN: >>>
+**Critical dates**
+- TBD - and what makes each one hard
+
+**Timeline risks**
+- TBD - periods to avoid, dependencies outside our control
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-CON-OTHER
+TITLE: Other constraints
+
+[BRIEF_CONSTRAINT]
+UID: BRC-04
+CONSTRAINT_TYPE: Legal
+STATUS: Draft
+SOURCE: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - A legal, regulatory, technical, organisational or operational limit. One
+node per constraint rather than one node listing many, so each can be traced
+and refined separately at L1.
+<<<
+RATIONALE: >>>
+TBD - where it comes from and what it rules out.
+<<<
+
+[[/SECTION]]
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-DECISION
+TITLE: Decision and recommendation
+
+[TEXT]
+STATEMENT: >>>
+*Optional section.* Include it when the brief documents a formal decision with
+defined success criteria, structured risk assessment, or explicit Go/No-Go
+conditions. The brief can stand without it when the decision context is
+straightforward - in that case delete the whole section rather than filling it
+with placeholders.
+<<<
+
+[[SECTION]]
+UID: L0-DEC-SUCCESS
+TITLE: Success criteria
+
+[SUCCESS_CRITERION]
+UID: SUC-01
+TARGET: TBD
+MEASURED_BY: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - An observable condition that would show the initiative succeeded. TARGET
+carries the threshold, MEASURED_BY the method. A criterion with no threshold
+cannot be assessed after the fact.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: IMP-01
+  ROLE: Measures
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-DEC-RISK
+TITLE: Risk assessment
+
+[RISK]
+UID: RSK-01
+PROBABILITY: Medium
+SEVERITY: Medium
+TITLE: TBD
+STATEMENT: >>>
+TBD - What could go wrong, stated concretely enough to be mitigated. Order the
+risks so the high-probability, high-severity ones come first.
+<<<
+MITIGATION: >>>
+TBD - what reduces the probability, or the severity, or both. A risk with no
+mitigation is a reason to reconsider the recommendation.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-DEC-RECOMMENDATION
+TITLE: Go/No-Go recommendation
+
+[RECOMMENDATION]
+UID: REC-01
+VERDICT: TBD
+DECISION_REQUIRED_BY: TBD
+DECIDED_BY: TBD
+TITLE: TBD
+STATEMENT: >>>
+TBD - The recommendation and the reasoning behind it, referring to the
+constraints, risks and success criteria above. The decision is whether to
+proceed to solution design, not which option to build.
+<<<
+CONDITIONS: >>>
+TBD - For a Conditional-Go, what must hold. Omit the field otherwise.
+<<<
+NEXT_STEPS: >>>
+TBD - what happens on approval, as a short numbered list.
+<<<
+
+[[/SECTION]]
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-IMPLEMENTATION
+TITLE: Implementation planning
+
+[TEXT]
+STATEMENT: >>>
+*Optional section.* Include it when the brief needs to record agreed timelines,
+a transformation framework, or post-approval process steps. Omit it when
+planning detail belongs in the subsequent Solution Design instead.
+<<<
+
+[[SECTION]]
+UID: L0-IMP-TIMELINE
+TITLE: Project timeline
+
+[TEXT]
+STATEMENT: >>>
+TBD - High-level phases and durations after approval. Say whether these are
+estimates or commitments.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-IMP-FRAMEWORK
+TITLE: Transformation framework / implementation approach
+
+[TEXT]
+STATEMENT: >>>
+TBD - Any broader transformation plan, evaluation windows, or structured
+fallback conditions agreed with stakeholders.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-IMP-ACCEPTANCE
+TITLE: Process and stakeholder acceptance
+
+[TEXT]
+STATEMENT: >>>
+TBD - Agreed process steps, formal acceptance criteria, or stakeholder
+commitments governing implementation. Reference the relevant RSK item if
+adoption is a named risk.
+<<<
+
+[[/SECTION]]
+
+[[/SECTION]]
+
+[[SECTION]]
+UID: L0-APPENDICES
+TITLE: Appendices
+
+[TEXT]
+STATEMENT: >>>
+*Optional section.*
+
+**Supporting data.** TBD - survey results, competitor analysis, market
+research, feasibility studies, cost-benefit detail.
+
+**References.** TBD - documents, studies and sources cited above, plus the
+downstream L1, L2 and L3 documents once they exist.
+<<<
+
+[[/SECTION]]
