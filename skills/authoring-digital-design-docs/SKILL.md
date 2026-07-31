@@ -38,7 +38,7 @@ The templates carry the full section skeleton for their level, plus one stub nod
 
 The four templates validate together as a set, so copying all of them gives a working skeleton immediately.
 
-## Checklist for writing or extending a project
+## Checklist for writing or extending the design documents
 
 - [ ] 1. Establish which levels are in scope
 - [ ] 2. Work out what the content actually is
