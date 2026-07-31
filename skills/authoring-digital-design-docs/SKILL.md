@@ -56,9 +56,7 @@ Before writing anything, establish:
 - For L2: what the elements are — software, hardware, partner, user types
 - For L3: which element this document covers, and which sections apply to it
 
-Pull as much as possible from the conversation, uploaded documents, or existing higher-level documents in the project. Ask about the gaps rather than inventing. Invented content in a design document is worse than a `TBD`, because `TBD` is visible and gets counted on the statistics screen while an invention reads as a decision.
-
-Where something genuinely isn't known, write `TBD` (unknown) or `TBC` (known but not yet agreed). These are accepted in any Choice field regardless of its options.
+Pull as much as possible from the conversation, uploaded documents, or existing higher-level documents in the project. Where something genuinely isn't known, write `TBD` (unknown) or `TBC` (known but not yet agreed) rather than inventing a plausible value.
 
 ### 3. Write top-down
 
@@ -124,8 +122,6 @@ Tell the user:
 
 - Which documents were created and how to run them
 - The traceability edge count by role
-- Every `TBD`/`TBC` left behind, and what decision each is waiting on
-- Any judgement call made on their behalf — an assumed constraint, an inferred element boundary, a relation whose role was ambiguous
 - Any relations omitted because a parent level was out of scope
 
 Then present the files.
@@ -146,8 +142,6 @@ Then present the files.
 
 **Mark derived requirements.** A node with no parent because it follows from an implementation decision rather than a stated need gets `DERIVED: Yes` and a `RATIONALE` saying what decision it follows from. Otherwise it's indistinguishable from an orphan.
 
-**Executive summaries at L1 are for people who read nothing else.** Each major L1 section opens with one. Write it so a stakeholder who skips the specifications still understands the section.
-
 **Use element IDs in diagrams.** Mermaid node labels should carry the `SE-`/`UT-`/`PE-` ID. A diagram whose boxes correspond to identified elements can be checked against the prose; one with free-text boxes drifts silently.
 
 **Never hand-write a downward reference.** The framework templates ask for optional fields like "Implemented by SQR-02", "Realized by SSc-01" and "Implemented As: SE-01". Do not write these, and do not add grammar fields for them. Each is the reverse view of a relation the child already declares at the level below, and StrictDoc renders it automatically because the grammar sets `REVERSE_ROLE`. Hand-maintained back-references are the classic failure mode of layered documentation — written once, never updated. Derived ones cannot go stale.
@@ -159,8 +153,6 @@ Then present the files.
 **Delete optional sections rather than stubbing them.** L0's Decision & Recommendation and Implementation Planning are both optional, and Strategic Alignment and Appendices are too. An empty section reads as an oversight; an absent one reads as a decision the reader can ask about. The same applies to L3, where several sections do not apply to every element type — there, say which and why, because the reader cannot tell an inapplicable section from a forgotten one.
 
 **Deployment detail belongs in a fifth document.** The framework names a **System Realization Concept** for deployment architecture, infrastructure specification, integration configuration and implementation detail. It sits alongside the four levels, not within them. If an L2 description reaches processor counts, memory sizes or connection pool settings, move it there.
-
-**Say so when a document is not warranted.** A design brief is for new initiatives, significant investment, multi-stakeholder alignment or strategic decisions. For a small enhancement, a bug fix, an internal tool with clear requirements, or a prototype, a full brief is ceremony — offer to go straight to L1 or write something lighter instead.
 
 ## Reference files
 
