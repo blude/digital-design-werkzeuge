@@ -44,15 +44,18 @@ pipx install strictdoc
 
 ### Claude desktop
 
-The desktop app takes a skill as a zip. Download `authoring-docs.zip` from the [latest release](https://github.com/blude/digital-design-werkzeuge/releases/latest), or build it yourself:
+Install the whole plugin (skill and agent). Under Settings → Customize, add it from this GitHub repository (`blude/digital-design-werkzeuge`), or upload `digital-design.plugin` from the [latest release](https://github.com/blude/digital-design-werkzeuge/releases/latest).
+
+To install only the skill, upload `authoring-docs.zip` from the same release under Settings → Customize → Skills → Add (Upload skill). The skill still includes the agent's drafting guidance as `references/drafting-guidance.md`.
+
+Both files can be built locally into `dist/`:
 
 ```bash
-scripts/build-skill.sh   # writes dist/authoring-docs.zip
+scripts/build-skill.sh            # authoring-docs.zip
+scripts/build-skill.sh --plugin   # digital-design.plugin
 ```
 
-Then upload it under Settings → Customize → Skills → Add (Upload skill). Code execution must be enabled, and validation installs StrictDoc on first use, so the sandbox needs network access.
-
-The desktop app has no agents. The drafting guidance the `digital-designer` agent uses is included in the skill as `references/drafting-guidance.md`, so you still get it.
+Code execution must be enabled, and validation installs StrictDoc on first use, so the sandbox needs network access.
 
 ## Usage
 
@@ -80,7 +83,7 @@ It runs `strictdoc export` (syntax, grammar, relation targets), checks entity at
 .claude-plugin/        plugin manifest
 .github/workflows/     CI: template validation, release zip on v* tags
 agents/                digital-designer agent
-scripts/               build-skill.sh, packages the skill for Claude desktop
+scripts/               build-skill.sh, packages the skill or plugin for Claude desktop
 skills/authoring-docs/
   SKILL.md             skill entry point
   assets/grammars/     StrictDoc grammars, one per level
