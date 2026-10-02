@@ -13,6 +13,7 @@ For anything larger than a small fix, open an [issue](https://github.com/blude/d
 | `skills/authoring-docs/assets/templates/` | Starter documents. Must stay in sync with the grammars. |
 | `skills/authoring-docs/references/` | Framework and syntax guidance the skill reads. |
 | `skills/authoring-docs/scripts/` | Validation and traceability tooling. |
+| `scripts/` | Repository tooling. `build-skill.sh` packages the skill as a zip for Claude desktop. |
 | `agents/` | Agent definitions. One capability per agent. |
 
 ## Setup

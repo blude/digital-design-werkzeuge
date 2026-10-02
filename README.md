@@ -6,7 +6,7 @@ Agent skills for writing four-level digital design documentation as validated, t
 [![Validate](https://github.com/blude/digital-design-werkzeuge/actions/workflows/validate.yml/badge.svg)](https://github.com/blude/digital-design-werkzeuge/actions/workflows/validate.yml)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-Works with Claude Code and any agent supported by the [`skills`](https://skills.sh) CLI.
+Works with Claude Code, the Claude desktop app, and any agent supported by the [`skills`](https://skills.sh) CLI.
 
 ## What it does
 
@@ -42,6 +42,18 @@ The skill needs [StrictDoc](https://strictdoc.readthedocs.io/) and Python 3 for 
 pipx install strictdoc
 ```
 
+### Claude desktop
+
+The desktop app takes a skill as a zip. Download `authoring-docs.zip` from the [latest release](https://github.com/blude/digital-design-werkzeuge/releases/latest), or build it yourself:
+
+```bash
+scripts/build-skill.sh   # writes dist/authoring-docs.zip
+```
+
+Then upload it under Settings → Capabilities → Skills. Code execution must be enabled, and validation installs StrictDoc on first use, so the sandbox needs network access.
+
+The desktop app has no agents. The drafting guidance the `digital-designer` agent uses is included in the skill as `references/drafting-guidance.md`, so you still get it.
+
 ## Usage
 
 Ask your agent in plain language. The skill triggers on mentions of a design brief, solution/system/element design concept, L0–L3 documents, or requirement IDs like `BG-01` and `UC-03`.
@@ -66,7 +78,9 @@ It runs `strictdoc export` (syntax, grammar, relation targets), checks entity at
 
 ```text
 .claude-plugin/        plugin manifest
+.github/workflows/     CI: template validation, release zip on v* tags
 agents/                digital-designer agent
+scripts/               build-skill.sh, packages the skill for Claude desktop
 skills/authoring-docs/
   SKILL.md             skill entry point
   assets/grammars/     StrictDoc grammars, one per level
