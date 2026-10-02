@@ -25,7 +25,7 @@ Create the project and copy the grammars in. The four `.sgra` grammar files are 
 
 ```bash
 mkdir -p <project>/docs
-cp <skill>/assets/*.sgra <project>/docs/
+cp <skill>/assets/grammars/*.sgra <project>/docs/
 ```
 
 Copy the templates for the levels being written:
@@ -200,7 +200,7 @@ Read these as needed rather than upfront. Every pointer to a reference file live
 
 ### Grammar files
 
-The `.sgra` files in `assets/` are worth reading directly when writing nodes of an unfamiliar type: the field declaration order **is** the required node field order, and the `SingleChoice(...)` lists are the permitted values.
+The `.sgra` files in `assets/grammars/` are worth reading directly when writing nodes of an unfamiliar type: the field declaration order **is** the required node field order, and the `SingleChoice(...)` lists are the permitted values.
 
 ## Scripts
 

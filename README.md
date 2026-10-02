@@ -12,7 +12,7 @@ This repository contains a set of reusable Claude skills, agent instructions, an
 
 - `agents/` — agent-oriented guidance for specific tasks
 - `skills/` — reusable skill definitions and supporting assets
-- `skills/*/assets/` — templates and grammar files used by the skills
+- `skills/*/assets/` — templates and grammar files (`assets/grammars/`) used by the skills
 - `skills/*/references/` — framework and syntax documentation
 - `skills/*/scripts/` — validation and helper utilities
 

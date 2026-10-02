@@ -153,4 +153,4 @@ Only three L0 element types are relation targets from below:
 
 The framework describes L0 as narrative, and most of it is. The six typed element classes exist because L1 needs anchors to trace up to, and because stakeholders, options, constraints, criteria and risks are the enumerable parts of a brief.
 
-If a project prefers L0 purely narrative, deleting element types from `assets/L0_design_brief.sgra` costs only the upward relations from L1 — nothing else breaks. Worth confirming against the source framework before treating the prefixes as canonical.
+If a project prefers L0 purely narrative, deleting element types from `assets/grammars/L0_design_brief.sgra` costs only the upward relations from L1 — nothing else breaks. Worth confirming against the source framework before treating the prefixes as canonical.

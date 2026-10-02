@@ -70,7 +70,7 @@ So **any custom field name beginning with `RELATIONS` is rejected** — includin
 TextXSyntaxError: Expected 'MID' or 'UID' or '(?!^UID)(?!^RELATIONS)...' or 'RELATIONS:'
 ```
 
-Use `ASSOCIATIONS` instead. The grammars in `assets/` already do.
+Use `ASSOCIATIONS` instead. The grammars in `assets/grammars/` already do.
 
 Reserved field names with built-in meaning: `MID`, `UID`, `LEVEL`, `PREFIX`, `TITLE`, `STATEMENT`, `DESCRIPTION`, `CONTENT`, `RATIONALE`, `COMMENT`, `STATUS`. Using them is fine — just be aware `STATUS` feeds the project statistics screen, and `RATIONALE`/`COMMENT` get special rendering.
 
@@ -110,7 +110,7 @@ Each grammar element must declare **exactly one** content field, named `STATEMEN
 
 Fields declared **before** the content field are treated as single-line metadata. Fields declared **after** it may be multiline.
 
-This is why `ACCEPTANCE_CRITERIA`, `RATIONALE`, `CONSEQUENCE` and similar sit after `STATEMENT` in every grammar in `assets/`, even though they read like metadata. There is no way to have a multiline field before the content field.
+This is why `ACCEPTANCE_CRITERIA`, `RATIONALE`, `CONSEQUENCE` and similar sit after `STATEMENT` in every grammar in `assets/grammars/`, even though they read like metadata. There is no way to have a multiline field before the content field.
 
 ---
 
@@ -308,7 +308,7 @@ Externalising the grammars shortens the documents by roughly 25–30%.
 | `Zebra` | Table-based variant, alternating rows |
 | `Plain` | Field content only, no metadata |
 
-Element-level setting wins over document-level. The grammars in `assets/` use `Plain` for step nodes and `Inline` for extensions, so scenarios read as flows rather than as stacks of metadata tables.
+Element-level setting wins over document-level. The grammars in `assets/grammars/` use `Plain` for step nodes and `Inline` for extensions, so scenarios read as flows rather than as stacks of metadata tables.
 
 Other knobs: `NODE_IN_TOC: True/False` controls whether requirement titles clutter the table of contents; `AUTO_LEVELS: On/Off` controls automatic section numbering; `LEVEL: None` on a section excludes it from numbering and cascades to its children.
 
