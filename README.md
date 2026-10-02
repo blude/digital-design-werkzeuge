@@ -71,7 +71,7 @@ skills/authoring-docs/
   SKILL.md             skill entry point
   assets/grammars/     StrictDoc grammars, one per level
   assets/templates/    starter documents, one per level
-  references/          framework, per-level and syntax guidance
+  references/          framework, per-level, drafting and syntax guidance
   scripts/             validation and traceability tooling
 ```
 

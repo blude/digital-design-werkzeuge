@@ -196,6 +196,8 @@ Read these as needed rather than upfront. Every pointer to a reference file live
 
 **`references/traceability.md`** — before writing relations. The roles and their reverse names, which level links to which, why downward references are derived rather than written, when a same-level relation is legitimate, the two ways to record a constraint's reach, and how to handle derived requirements and lateral links.
 
+**`references/drafting-guidance.md`** — before drafting prose or interviewing a stakeholder. Judgment calls (draw out goals, `TBD` over invention, name contradictions), what may and may not be done without asking, how to close a session, and the register for each level with the phrases to cut.
+
 **`references/sdoc-syntax.md`** — when the parser rejects something, or before using an unfamiliar construct. Every failure mode with its real error message, the four ordering rules, reserved field names, and the rendering controls.
 
 ### Grammar files
