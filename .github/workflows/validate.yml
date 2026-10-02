@@ -1,0 +1,25 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  templates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install strictdoc
+      # The four grammars and templates must parse and cross-validate as a set.
+      # validate.py is not used here: it also flags the templates' TBD
+      # placeholders, which are expected in unfilled starter documents.
+      - name: Export templates with StrictDoc
+        run: |
+          mkdir -p project/docs
+          cp skills/authoring-docs/assets/grammars/*.sgra project/docs/
+          cp skills/authoring-docs/assets/templates/*.sdoc project/docs/
+          cd project && strictdoc export . --output-dir out

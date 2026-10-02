@@ -4,9 +4,11 @@
   "description": "Creates a Four-level design documentation framework (Digital Design Brief, Solution Design Concept, System Design Concept, Element Design Concept) as validated StrictDoc documents, plus a drafting agent tuned to the register each level needs.",
   "version": "0.1.0",
   "author": {
-    "name": "Sarah Puppin Pratti",
+    "name": "Sarah Pratti",
     "email": "sarah@pratti.de"
   },
+  "homepage": "https://github.com/blude/digital-design-werkzeuge",
+  "repository": "https://github.com/blude/digital-design-werkzeuge",
   "license": "MIT",
   "keywords": [
     "digital design",

@@ -1,0 +1,14 @@
+{
+  "name": "digital-design-werkzeuge",
+  "owner": {
+    "name": "Sarah Pratti",
+    "email": "sarah@pratti.de"
+  },
+  "plugins": [
+    {
+      "name": "digital-design",
+      "source": "./",
+      "description": "Four-level digital design documentation framework (L0–L3) as validated StrictDoc documents, plus a drafting agent."
+    }
+  ]
+}
