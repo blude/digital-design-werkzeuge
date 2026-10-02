@@ -2,7 +2,7 @@
   "name": "digital-design",
   "displayName": "Digital Design",
   "description": "Creates a three-level design documentation framework (Solution Design Concept, System Design Concept, Element Design Concept) plus a Digital Design Brief that frames the problem and authorizes design work, as validated StrictDoc documents, plus a drafting agent tuned to the register each level needs.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": {
     "name": "Sarah Pratti",
     "email": "sarah@pratti.de"
