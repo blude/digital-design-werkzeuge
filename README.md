@@ -50,7 +50,7 @@ The desktop app takes a skill as a zip. Download `authoring-docs.zip` from the [
 scripts/build-skill.sh   # writes dist/authoring-docs.zip
 ```
 
-Then upload it under Settings → Capabilities → Skills. Code execution must be enabled, and validation installs StrictDoc on first use, so the sandbox needs network access.
+Then upload it under Settings → Customize → Skills → Add (Upload skill). Code execution must be enabled, and validation installs StrictDoc on first use, so the sandbox needs network access.
 
 The desktop app has no agents. The drafting guidance the `digital-designer` agent uses is included in the skill as `references/drafting-guidance.md`, so you still get it.
 

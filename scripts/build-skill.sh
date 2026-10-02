@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Package a skill as a zip for upload in Claude desktop (Settings > Capabilities > Skills).
+# Package a skill as a zip for upload in Claude desktop (Settings > Customize > Skills > Add).
 # Usage: scripts/build-skill.sh [skill-name]   (default: authoring-docs)
 set -euo pipefail
 
