@@ -75,6 +75,10 @@ skills/authoring-docs/
   scripts/             validation and traceability tooling
 ```
 
+## Acknowledgements
+
+The templates in the [Canteen App Design Story](https://ireb.atlassian.net/wiki/spaces/TCADS/overview?homepageId=2429386869) by Kim Lauenroth served as source material for this skill.
+
 ## Contributing
 
 Contributions are open and welcome: bug reports, framework corrections, new references, better templates, and improvements to the skill and agent instructions. Read [CONTRIBUTING.md](CONTRIBUTING.md) to get started, and open an [issue](https://github.com/blude/digital-design-werkzeuge/issues) first if you plan a larger change.
