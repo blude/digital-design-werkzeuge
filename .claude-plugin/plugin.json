@@ -11,8 +11,9 @@
   "repository": "https://github.com/blude/digital-design-werkzeuge",
   "license": "MIT",
   "keywords": [
-    "digital design",
-    "design documentation",
+    "digital-design",
+    "design-documentation",
+    "spec-driven-development",
     "strictdoc",
     "requirements",
     "ireb"
