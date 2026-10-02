@@ -1,6 +1,6 @@
 # Digital Design Werkzeuge
 
-Agent skills for writing four-level digital design documentation as validated, traceable [StrictDoc](https://strictdoc.readthedocs.io/) documents.
+Agent skills for writing digital design documentation (a Digital Design Brief plus three levels of design concept) as validated, traceable [StrictDoc](https://strictdoc.readthedocs.io/) documents.
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Validate](https://github.com/blude/digital-design-werkzeuge/actions/workflows/validate.yml/badge.svg)](https://github.com/blude/digital-design-werkzeuge/actions/workflows/validate.yml)

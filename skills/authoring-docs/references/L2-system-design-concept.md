@@ -18,7 +18,7 @@ Three boundaries matter here, and the third is easy to miss:
 
 **L3 below** provides the detailed specification per software element — technical interfaces, use cases, technical functions, entities, element-specific quality requirements.
 
-**A System Realization Concept alongside** holds deployment architecture, infrastructure specification, integration configuration and technical implementation detail. The framework names it explicitly, and it is not one of the four levels. When a description in L2 starts naming processor counts, memory sizes or connection pool settings, it has left this level — that content belongs there.
+**A System Realization Concept alongside** holds deployment architecture, infrastructure specification, integration configuration and technical implementation detail. The framework names it explicitly, and it is not one of the three design concepts. When a description in L2 starts naming processor counts, memory sizes or connection pool settings, it has left this level — that content belongs there.
 
 The practical test on hardware: "10–12 inch touchscreen with camera" belongs at L2; "2.4 GHz quad-core, 4 GB RAM" does not.
 

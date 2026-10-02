@@ -1,6 +1,6 @@
-# The four-level framework
+# The Digital Design framework
 
-Four documents, each written for a different audience at a different level of abstraction. A statement belongs at exactly one level. The commonest authoring mistake is writing a solution at a level meant for needs, or a need at a level meant for implementation.
+Four documents, each written for a different audience. Three of them (the Solution, System and Element Design Concepts) describe the solution at descending levels of abstraction. The Digital Design Brief does not: it is a process document that frames the problem, evaluates options and authorizes the design work to begin. A statement belongs at exactly one level. The commonest authoring mistake is writing a solution at a level meant for needs, or a need at a level meant for implementation.
 
 ## Contents
 
@@ -113,7 +113,7 @@ Two things distinguish this level. Quality requirements use **business categorie
 - Constraints — `SC-xx`
 - Appendix *(optional)*
 
-**A fifth document exists.** Deployment architecture, infrastructure specification, integration configuration and technical implementation detail belong in a **System Realization Concept**, which sits alongside the four levels rather than within them. When an L2 description starts naming processor counts or connection pool sizes, it has left this level.
+**A fifth document exists.** Deployment architecture, infrastructure specification, integration configuration and technical implementation detail belong in a **System Realization Concept**, which sits alongside the other four documents rather than within them. When an L2 description starts naming processor counts or connection pool sizes, it has left this level.
 
 Two rules worth knowing before writing one: **every system goal should have at least one system scenario** demonstrating how the system achieves it, and **differentiated depth between scenarios is intentional** — the `DETAIL_LEVEL` field records the choice so a reviewer does not read variation as inconsistency.
 

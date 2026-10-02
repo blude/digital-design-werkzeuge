@@ -255,4 +255,4 @@ Non-negotiable requirements limiting design and implementation choices for this 
 
 **Into code, once it exists:** `TF-` declares `TYPE: File` relations, so a technical function can point at the function implementing it and StrictDoc will report coverage.
 
-**Downward — nothing.** L3 is the lowest of the four levels. The one thing below it is source code, via `File` relations. Deployment and infrastructure detail belong in the System Realization Concept, alongside the four levels rather than beneath them.
+**Downward — nothing.** L3 is the lowest of the three design concept levels. The one thing below it is source code, via `File` relations. Deployment and infrastructure detail belong in the System Realization Concept, alongside the design documents rather than beneath them.

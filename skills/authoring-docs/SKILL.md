@@ -1,9 +1,9 @@
 ---
 name: authoring-docs
-description: Generate hierarchical design documentation using the four-level framework (L0 Digital Design Brief, L1 Solution Design Concept, L2 System Design Concept, L3 Element Design Concept) as validated StrictDoc documents with typed requirements and cross-level traceability. Use this skill whenever the user mentions a design brief, solution design concept, system design concept, element design concept, L0/L1/L2/L3 design documents, or asks to write, extend, review or validate requirements documentation in this four-level structure — including when they only name one level, refer to it loosely as "the design docs" or "the spec", ask for a Go/No-Go brief, or want requirements with IDs like BG-01, SE-02, UC-03. Also use it when they ask to add a requirement, use case, system element or constraint to existing documents in this structure, since new nodes must match the level's grammar and trace to a parent.
+description: Generate hierarchical design documentation using the Digital Design framework (L0 Digital Design Brief, a process document that frames the problem and authorizes design work, plus three design concepts: L1 Solution, L2 System, L3 Element) as validated StrictDoc documents with typed requirements and cross-level traceability. Use this skill whenever the user mentions a design brief, solution design concept, system design concept, element design concept, L0/L1/L2/L3 design documents, or asks to write, extend, review or validate requirements documentation in this structure — including when they only name one level, refer to it loosely as "the design docs" or "the spec", ask for a Go/No-Go brief, or want requirements with IDs like BG-01, SE-02, UC-03. Also use it when they ask to add a requirement, use case, system element or constraint to existing documents in this structure, since new nodes must match the level's grammar and trace to a parent.
 ---
 
-# Four-level Digital Design documentation
+# Digital Design documentation
 
 Generates the L0–L3 design documentation framework as StrictDoc `.sdoc` documents. Each level is a separate document with its own grammar, which means the tool enforces that a statement sits at the right level of abstraction, and validates every cross-level reference.
 
@@ -172,7 +172,7 @@ Then present the files.
 
 **Delete optional sections rather than stubbing them.** L0's Decision & Recommendation and Implementation Planning are both optional, and Strategic Alignment and Appendices are too. An empty section reads as an oversight; an absent one reads as a decision the reader can ask about. The same applies to L3, where several sections do not apply to every element type — there, say which and why, because the reader cannot tell an inapplicable section from a forgotten one.
 
-**Deployment detail belongs in a fifth document.** The framework names a **System Realization Concept** for deployment architecture, infrastructure specification, integration configuration and implementation detail. It sits alongside the four levels, not within them. If an L2 description reaches processor counts, memory sizes or connection pool settings, move it there.
+**Deployment detail belongs in a fifth document.** The framework names a **System Realization Concept** for deployment architecture, infrastructure specification, integration configuration and implementation detail. It sits alongside the other four documents, not within them. If an L2 description reaches processor counts, memory sizes or connection pool settings, move it there.
 
 ## Reference files
 
@@ -180,7 +180,7 @@ Read these as needed rather than upfront. Every pointer to a reference file live
 
 ### Always, for any level
 
-**`references/framework.md`** — the overview. Section structure, audience and ID prefixes for all four levels, plus the tests for deciding which level a statement belongs to. Read this first, then the file for the level being written.
+**`references/framework.md`** — the overview. Section structure, audience and ID prefixes for all four documents, plus the tests for deciding which level a statement belongs to. Read this first, then the file for the level being written.
 
 ### One per level
 
