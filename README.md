@@ -51,8 +51,8 @@ To install only the skill, upload `authoring-docs.zip` from the same release und
 Both files can be built locally into `dist/`:
 
 ```bash
-scripts/build-skill.sh            # authoring-docs.zip
-scripts/build-skill.sh --plugin   # digital-design.plugin
+scripts/build-release.sh           # digital-design.plugin
+scripts/build-release.sh --skill   # authoring-docs.zip
 ```
 
 Code execution must be enabled, and validation installs StrictDoc on first use, so the sandbox needs network access.
@@ -83,7 +83,7 @@ It runs `strictdoc export` (syntax, grammar, relation targets), checks entity at
 .claude-plugin/        plugin manifest
 .github/workflows/     CI: template validation, release zip on v* tags
 agents/                digital-designer agent
-scripts/               build-skill.sh, packages the skill or plugin for Claude desktop
+scripts/               build-release.sh, packages the skill or plugin for Claude desktop
 skills/authoring-docs/
   SKILL.md             skill entry point
   assets/grammars/     StrictDoc grammars, one per level

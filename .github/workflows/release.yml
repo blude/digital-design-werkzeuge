@@ -16,8 +16,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build skill zip and plugin
         run: |
-          scripts/build-skill.sh
-          scripts/build-skill.sh --plugin
+          scripts/build-release.sh
+          scripts/build-release.sh --skill
       # gh is preinstalled on GitHub runners. These are the files users
       # upload in Claude desktop, so attach them to the release.
       - name: Create release

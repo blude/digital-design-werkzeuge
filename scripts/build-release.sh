@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Package this repo for upload in Claude desktop (Settings > Customize).
-#   scripts/build-skill.sh [skill-name]   skill zip, default authoring-docs (Skills > Add)
-#   scripts/build-skill.sh --plugin       dist/<plugin-name>.plugin, skill + agent + manifest
+#   scripts/build-release.sh                  dist/<plugin-name>.plugin, skill + agent + manifest
+#   scripts/build-release.sh --skill [name]   dist/<name>.zip, skill only (Skills > Add); default authoring-docs
 set -euo pipefail
 
 repo_root="$(cd "$(dirname "$0")/.." && pwd)"
@@ -10,7 +10,7 @@ mkdir -p "$repo_root/dist"
 # macOS and Python cache files that should not ship.
 excludes=(-x "*.DS_Store" "*__pycache__*" "*.pyc")
 
-if [ "${1:-}" = "--plugin" ]; then
+if [ "${1:-}" != "--skill" ]; then
   # First "name" in the manifest is the plugin's; the author's comes later.
   name="$(grep -m1 '"name"' "$repo_root/.claude-plugin/plugin.json" | sed 's/.*: *"\(.*\)".*/\1/')"
   out="$repo_root/dist/$name.plugin"
@@ -22,7 +22,7 @@ if [ "${1:-}" = "--plugin" ]; then
   cd "$repo_root"
   zip -rq "$out" .claude-plugin agents skills "${excludes[@]}" "*/marketplace.json"
 else
-  skill="${1:-authoring-docs}"
+  skill="${2:-authoring-docs}"
   out="$repo_root/dist/$skill.zip"
 
   if [ ! -f "$repo_root/skills/$skill/SKILL.md" ]; then
