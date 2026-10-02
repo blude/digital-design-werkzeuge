@@ -99,7 +99,7 @@ ELEMENTS:
 - TAG: STEP
   PROPERTIES:
     PREFIX: ST-
-    VIEW_STYLE: Plain
+    VIEW_STYLE: Table
   FIELDS:
   - TITLE: UID
     TYPE: String
@@ -119,7 +119,7 @@ ELEMENTS:
 - TAG: EXTENSION
   PROPERTIES:
     PREFIX: EX-
-    VIEW_STYLE: Inline
+    VIEW_STYLE: Table
   FIELDS:
   - TITLE: UID
     TYPE: String
@@ -229,7 +229,7 @@ ELEMENTS:
 - TAG: FUNCTION_STEP
   PROPERTIES:
     PREFIX: FS-
-    VIEW_STYLE: Plain
+    VIEW_STYLE: Table
   FIELDS:
   - TITLE: UID
     TYPE: String
@@ -249,7 +249,7 @@ ELEMENTS:
 - TAG: FUNCTION_ALTERNATIVE
   PROPERTIES:
     PREFIX: FA-
-    VIEW_STYLE: Inline
+    VIEW_STYLE: Table
   FIELDS:
   - TITLE: UID
     TYPE: String
