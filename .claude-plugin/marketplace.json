@@ -8,7 +8,7 @@
     {
       "name": "digital-design",
       "source": "./",
-      "description": "Three-level Digital Design documentation framework (L0–L3) as validated StrictDoc documents, plus a drafting agent."
+      "description": "Three-level design documentation framework (Solution, System, Element Design Concepts) plus a Digital Design Brief that frames the problem and authorizes design work, as validated StrictDoc documents, plus a drafting agent."
     }
   ]
 }
